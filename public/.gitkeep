@@ -1,0 +1,27 @@
+# Directorio de archivos estáticos
+
+Colocar aquí las imágenes y archivos estáticos:
+
+## Estructura de imágenes requeridas:
+
+/images/
+  /hero-paneles.jpg           # Imagen principal del hero (1920x1080px recomendado)
+  /og-image.jpg               # Imagen Open Graph (1200x630px)
+  /logo.png                   # Logo de la empresa
+  
+  /usos/
+    /camaras-frigorificas.jpg
+    /congelados.jpg
+    /naves-industriales.jpg
+    /techos.jpg
+    /muros.jpg
+  
+  /tipos/
+    /pir-pur.jpg
+    /lana-de-roca.jpg
+  
+  /proyectos/
+    /proyecto-1.jpg
+    /proyecto-2.jpg
+    # ... más proyectos
+
