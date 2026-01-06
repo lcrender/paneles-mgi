@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import ProjectCard from '@/components/ui/ProjectCard'
+import { PROYECTOS } from '@/lib/content/proyectos'
 
 export const metadata: Metadata = {
   title: 'Proyectos - Galería de Obras Realizadas',
@@ -20,27 +21,27 @@ export default function ProyectosPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Placeholder para proyectos - se reemplazará con datos reales */}
-            <div className="card">
-              <div className="relative mb-4 h-64 w-full overflow-hidden rounded-lg bg-gray-200">
-                <Image
-                  src="/images/proyectos/proyecto-1.jpg"
-                  alt="Proyecto destacado"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          {PROYECTOS.length > 0 ? (
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {PROYECTOS.map((proyecto) => (
+                <ProjectCard
+                  key={proyecto.id}
+                  id={proyecto.id}
+                  title={proyecto.title}
+                  description={proyecto.description}
+                  videoSrc={proyecto.videoSrc}
+                  thumbnail={proyecto.thumbnail}
+                  thumbnailAlt={proyecto.thumbnailAlt}
                 />
-              </div>
-              <h2 className="mb-2 text-xl font-semibold text-gray-900">Proyecto Ejemplo 1</h2>
-              <p className="text-gray-600">
-                Descripción del proyecto realizado con paneles sándwich
-              </p>
+              ))}
             </div>
-          </div>
+          ) : (
+            <div className="text-center text-gray-500">
+              <p>No hay proyectos disponibles en este momento.</p>
+            </div>
+          )}
         </div>
       </section>
     </>
   )
 }
-

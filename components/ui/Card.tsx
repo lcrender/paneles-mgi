@@ -8,6 +8,7 @@ interface CardProps {
   image?: string
   imageAlt?: string
   className?: string
+  imageHeight?: string
 }
 
 export default function Card({
@@ -17,11 +18,12 @@ export default function Card({
   image,
   imageAlt,
   className = '',
+  imageHeight = 'h-48',
 }: CardProps) {
   return (
     <Link href={href} className={`card group block ${className}`}>
       {image && (
-        <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
+        <div className={`relative mb-4 ${imageHeight} w-full overflow-hidden rounded-lg`}>
           <Image
             src={image}
             alt={imageAlt || title}

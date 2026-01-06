@@ -5,7 +5,9 @@ import Card from '@/components/ui/Card'
 import CTA from '@/components/ui/CTA'
 import FAQ from '@/components/ui/FAQ'
 import FAQSchema from '@/components/seo/FAQSchema'
+import ProjectCard from '@/components/ui/ProjectCard'
 import { BENEFICIOS, TIPOS, PROCESO_TRABAJO } from '@/lib/constants'
+import { PROYECTOS } from '@/lib/content/proyectos'
 
 export const metadata = {
   title: 'Paneles Sándwich para Construcción Industrial y Cámaras Frigoríficas',
@@ -76,16 +78,17 @@ export default function HomePage() {
               Usos principales de nuestros paneles sándwich
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Nuestros paneles sándwich se adaptan a múltiples aplicaciones industriales y comerciales
+              Nuestros paneles sándwich están diseñados para adaptarse a diversas aplicaciones industriales y comerciales, permitiendo resolver necesidades de aislamiento, eficiencia energética y rápida instalación en diferentes entornos.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
             <Card
               title="Cámaras Frigoríficas"
               description="Paneles aptos para cámaras frigoríficas y otros sistemas de refrigeración, pensados para responder a diferentes exigencias térmicas y operativas."
               href="/paneles-sandwich/usos/camaras-frigorificas"
               image="/images/home/paneles-para-camaras-frigorificas.jpg"
               imageAlt="paneles para camaras frigorificas"
+              imageHeight="h-64"
             />
             <Card
               title="Congelados"
@@ -93,6 +96,7 @@ export default function HomePage() {
               href="/paneles-sandwich/usos/congelados"
               image="/images/home/paneles-sandwich-para-camaras-de-congelado.jpg"
               imageAlt="paneles sandwich para camaras de congelado"
+              imageHeight="h-64"
             />
             <Card
               title="Instalaciones industriales"
@@ -100,6 +104,7 @@ export default function HomePage() {
               href="/paneles-sandwich/usos/naves-industriales"
               image="/images/home/paneles-para-naves-industriales.jpg"
               imageAlt="paneles para naves industriales"
+              imageHeight="h-64"
             />
             <Card
               title="Techos"
@@ -107,6 +112,7 @@ export default function HomePage() {
               href="/paneles-sandwich/usos/techos"
               image="/images/home/paneles-sandwich-para-techos.jpg"
               imageAlt="paneles sandwich para techos"
+              imageHeight="h-64"
             />
             <Card
               title="Muros"
@@ -114,6 +120,7 @@ export default function HomePage() {
               href="/paneles-sandwich/usos/muros"
               image="/images/home/paneles-sandwich-para-muro.jpg"
               imageAlt="paneles sandwich para muro"
+              imageHeight="h-64"
             />
           </div>
         </div>
@@ -165,30 +172,31 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Proyectos Destacados
+              Proyectos en funcionamiento
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Algunos de nuestros proyectos más importantes
+              Proyectos desarrollados con nuestros paneles sándwich para distintas aplicaciones industriales y comerciales.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Placeholder para proyectos - se reemplazará con datos reales */}
-            <div className="card">
-              <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg bg-gray-200">
-                <Image
-                  src="/images/proyectos/proyecto-1.jpg"
-                  alt="Proyecto destacado"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          {PROYECTOS.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {PROYECTOS.slice(0, 3).map((proyecto) => (
+                <ProjectCard
+                  key={proyecto.id}
+                  id={proyecto.id}
+                  title={proyecto.title}
+                  description={proyecto.description}
+                  videoSrc={proyecto.videoSrc}
+                  thumbnail={proyecto.thumbnail}
+                  thumbnailAlt={proyecto.thumbnailAlt}
                 />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">Proyecto Ejemplo 1</h3>
-              <p className="text-gray-600">
-                Descripción del proyecto realizado con paneles sándwich
-              </p>
+              ))}
             </div>
-          </div>
+          ) : (
+            <div className="text-center text-gray-500">
+              <p>No hay proyectos destacados disponibles en este momento.</p>
+            </div>
+          )}
           <div className="mt-8 text-center">
             <Link href="/proyectos" className="btn-primary">
               Ver Todos los Proyectos
