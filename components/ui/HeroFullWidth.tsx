@@ -5,7 +5,9 @@ interface HeroFullWidthProps {
   h1: string
   subtitle: string
   secondaryLine?: string
+  introBeforeBullets?: string
   bullets: string[]
+  footerLine?: string
   primaryCta: {
     text: string
     href: string
@@ -22,7 +24,9 @@ export default function HeroFullWidth({
   h1,
   subtitle,
   secondaryLine,
+  introBeforeBullets,
   bullets,
+  footerLine,
   primaryCta,
   secondaryCta,
   image,
@@ -67,8 +71,11 @@ export default function HeroFullWidth({
                 {secondaryLine}
               </p>
             )}
+            {introBeforeBullets && (
+              <p className="mb-4 text-base leading-relaxed text-gray-700">{introBeforeBullets}</p>
+            )}
             {bullets.length > 0 && (
-              <ul className="mb-8 space-y-3">
+              <ul className="mb-6 space-y-3">
                 {bullets.map((bullet, index) => (
                   <li key={index} className="flex items-start">
                     <svg
@@ -86,6 +93,9 @@ export default function HeroFullWidth({
                   </li>
                 ))}
               </ul>
+            )}
+            {footerLine && (
+              <p className="mb-8 text-base font-medium text-gray-700">📍 {footerLine}</p>
             )}
             {/* CTAs en fila horizontal en desktop */}
             <div className="flex flex-col gap-4 sm:flex-row">

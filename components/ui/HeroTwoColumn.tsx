@@ -7,7 +7,11 @@ interface HeroTwoColumnProps {
   h1: string
   subtitle: string
   secondaryLine?: string
+  /** Párrafo opcional antes de la lista de bullets */
+  introBeforeBullets?: string
   bullets: string[]
+  /** Línea opcional después de los bullets (ej. "Distribución en toda Argentina") */
+  footerLine?: string
   primaryCta: {
     text: string
     href: string
@@ -24,7 +28,9 @@ export default function HeroTwoColumn({
   h1,
   subtitle,
   secondaryLine,
+  introBeforeBullets,
   bullets,
+  footerLine,
   primaryCta,
   secondaryCta,
   image,
@@ -43,8 +49,11 @@ export default function HeroTwoColumn({
             {secondaryLine && (
               <p className="mb-6 text-base leading-relaxed text-gray-600">{secondaryLine}</p>
             )}
+            {introBeforeBullets && (
+              <p className="mb-4 text-base leading-relaxed text-gray-700">{introBeforeBullets}</p>
+            )}
             {bullets.length > 0 && (
-              <ul className="mb-8 space-y-3">
+              <ul className="mb-6 space-y-3">
                 {bullets.map((bullet, index) => (
                   <li key={index} className="flex items-start">
                     <svg
@@ -62,6 +71,9 @@ export default function HeroTwoColumn({
                   </li>
                 ))}
               </ul>
+            )}
+            {footerLine && (
+              <p className="mb-8 text-base font-medium text-gray-700">📍 {footerLine}</p>
             )}
             <div className="flex flex-col gap-4 sm:flex-row">
               {primaryCta.href.startsWith('http') ? (

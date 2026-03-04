@@ -59,22 +59,27 @@ export const usosContent = {
       {
         question: '¿Qué espesor necesito para mi cámara frigorífica?',
         answer:
-          'El espesor depende de la temperatura objetivo. Para refrigeración (0°C a -5°C) recomendamos 100-150mm, para congelación (-5°C a -25°C) 150-200mm, y para ultracongelación (menos de -25°C) 200mm o superior. Nuestros especialistas pueden asesorarte según tu proyecto específico.',
+          'Depende de la temperatura interior y la exigencia operativa. Para refrigeración estándar recomendamos 100–120 mm. Para congelado, 150–200 mm.',
       },
       {
-        question: '¿Los paneles sándwich son herméticos?',
+        question: '¿Los paneles son completamente herméticos?',
         answer:
-          'Sí, nuestros paneles sándwich utilizan sistemas de unión especiales que garantizan la hermeticidad necesaria para cámaras frigoríficas. Las juntas están diseñadas para prevenir la entrada de aire y vapor de agua, manteniendo las condiciones térmicas ideales.',
+          'Sí. El sistema de encastre continuo está diseñado para minimizar infiltraciones y asegurar estanqueidad térmica adecuada para cámaras frigoríficas.',
       },
       {
-        question: '¿Cuánto tiempo tarda la instalación de una cámara frigorífica?',
+        question: '¿Realizan instalación?',
         answer:
-          'El tiempo de instalación varía según el tamaño del proyecto. Una cámara frigorífica estándar puede instalarse en 1-2 semanas, mientras que proyectos más grandes pueden requerir 3-4 semanas. La rapidez de montaje es una de las ventajas principales de los paneles sándwich.',
+          'Contamos con equipo técnico especializado en montaje de cámaras frigoríficas en todo el país.',
       },
       {
-        question: '¿Ofrecen garantía en los paneles para cámaras frigoríficas?',
+        question: '¿Cuál es la diferencia entre PIR y EPS?',
         answer:
-          'Sí, ofrecemos garantía en nuestros paneles sándwich. La garantía cubre defectos de fabricación y problemas de aislación térmica. Además, nuestros servicios de instalación también incluyen garantía de mano de obra.',
+          'El PIR ofrece mejor aislación térmica y mejor comportamiento frente al fuego. El EPS es una alternativa más económica con buen desempeño en refrigeración estándar.',
+      },
+      {
+        question: '¿Cuál es el precio de un panel para cámara frigorífica?',
+        answer:
+          'El precio varía según: espesor, tipo de núcleo, volumen de compra y ubicación de entrega. Solicitá una cotización personalizada para tu proyecto.',
       },
     ],
   },
@@ -100,7 +105,22 @@ export const usosContent = {
       {
         question: '¿Qué diferencia hay entre paneles para refrigeración y congelación?',
         answer:
-          'Los paneles para congelación requieren mayor espesor y mejores propiedades aislantes. Mientras que para refrigeración se usan espesores de 100-150mm, para congelación se recomiendan 150-200mm o superior dependiendo de la temperatura objetivo.',
+          'Los paneles para congelación requieren mayor espesor y mejor coeficiente térmico. Mientras que en refrigeración pueden utilizarse 100–120 mm, en congelado se recomiendan 150–200 mm o más según exigencia.',
+      },
+      {
+        question: '¿Se pueden usar paneles EPS en congelado?',
+        answer:
+          'Para congelado profundo recomendamos núcleo PIR por su mejor rendimiento térmico y comportamiento frente a humedad y baja temperatura.',
+      },
+      {
+        question: '¿Cómo evitar la formación de escarcha?',
+        answer:
+          'Mediante: espesor adecuado, correcta instalación, sellado preciso de juntas y diseño adecuado de piso y encuentros.',
+      },
+      {
+        question: '¿Realizan instalación de cámaras de congelado?',
+        answer:
+          'Sí. Contamos con equipo técnico especializado en montaje de cámaras frigoríficas y de congelado en todo el país.',
       },
     ],
   },
@@ -109,24 +129,27 @@ export const usosContent = {
     description:
       'Construcción rápida y eficiente de naves industriales con paneles sándwich. Soluciones modulares de alta calidad.',
     h1: 'Paneles Sándwich para Naves Industriales - Construcción Rápida y Eficiente',
-    content: `
-      <h2>Construcción industrial con paneles sándwich</h2>
-      <p>Los paneles sándwich revolucionan la construcción de naves industriales, ofreciendo una solución rápida, eficiente y de alta calidad. Son ideales para almacenes, talleres, plantas de producción y cualquier estructura industrial.</p>
-      
-      <h2>Ventajas para naves industriales</h2>
-      <ul>
-        <li>Rapidez de construcción - hasta 70% más rápido que construcción tradicional</li>
-        <li>Aislación térmica que reduce costos de climatización</li>
-        <li>Durabilidad y resistencia</li>
-        <li>Bajo mantenimiento</li>
-        <li>Diseño modular y flexible</li>
-      </ul>
-    `,
+    content: '',
     faqs: [
       {
-        question: '¿Son adecuados los paneles sándwich para estructuras grandes?',
+        question: '¿Se puede construir una nave completa con panel sándwich?',
         answer:
-          'Sí, los paneles sándwich son perfectos para naves industriales de cualquier tamaño. Son modulares, lo que permite construir desde pequeños almacenes hasta grandes plantas industriales de manera eficiente.',
+          'Sí. Los paneles se utilizan para muros y cubiertas, integrando cerramiento y aislación en un solo sistema.',
+      },
+      {
+        question: '¿Cuánto tiempo tarda la construcción?',
+        answer:
+          'Depende del tamaño, pero el sistema permite reducir significativamente los tiempos comparado con mampostería tradicional.',
+      },
+      {
+        question: '¿Requieren mantenimiento?',
+        answer:
+          'Mínimo. Las superficies prepintadas y galvanizadas están diseñadas para larga vida útil en entornos industriales.',
+      },
+      {
+        question: '¿Realizan instalación?',
+        answer:
+          'Sí. Contamos con equipo especializado para montaje de paneles en todo el país.',
       },
     ],
   },
@@ -135,15 +158,27 @@ export const usosContent = {
     description:
       'Sistemas de techado con paneles sándwich. Aislación térmica, impermeabilidad y durabilidad.',
     h1: 'Paneles Sándwich para Techos - Techado Industrial de Alta Calidad',
-    content: `
-      <h2>Sistemas de techado con paneles sándwich</h2>
-      <p>Los paneles sándwich para techos ofrecen una solución integral de techado con excelente aislación térmica, impermeabilidad y durabilidad. Ideales para techos industriales, comerciales y residenciales.</p>
-    `,
+    content: '',
     faqs: [
       {
-        question: '¿Son impermeables los paneles sándwich para techos?',
+        question: '¿El panel sándwich para techo soporta carga?',
         answer:
-          'Sí, nuestros paneles sándwich están diseñados para ser completamente impermeables. Las juntas entre paneles están selladas para prevenir filtraciones de agua.',
+          'Sí. Está diseñado para uso industrial y soporta cargas según cálculo estructural y distancia entre apoyos.',
+      },
+      {
+        question: '¿Reemplaza la aislación tradicional?',
+        answer:
+          'Sí. Integra estructura y aislación en una sola solución, evitando capas adicionales.',
+      },
+      {
+        question: '¿Se puede usar en combinación con paneles de muro?',
+        answer:
+          'Sí. Es el sistema ideal para lograr envolvente térmica completa en una nave industrial.',
+      },
+      {
+        question: '¿Realizan instalación?',
+        answer:
+          'Contamos con equipo técnico especializado para montaje de cubiertas industriales en todo el país.',
       },
     ],
   },
@@ -152,15 +187,27 @@ export const usosContent = {
     description:
       'Muros exteriores e interiores con paneles sándwich. Aislación térmica y acústica para todo tipo de construcciones.',
     h1: 'Paneles Sándwich para Muros - Muros Exteriores e Interiores',
-    content: `
-      <h2>Muros con paneles sándwich</h2>
-      <p>Los paneles sándwich para muros ofrecen una solución moderna para cerramientos exteriores e interiores, proporcionando excelente aislación térmica y acústica.</p>
-    `,
+    content: '',
     faqs: [
       {
-        question: '¿Pueden usarse paneles sándwich para muros exteriores?',
+        question: '¿Se pueden usar como fachada principal?',
         answer:
-          'Sí, nuestros paneles sándwich están diseñados para uso exterior. Tienen protección contra la intemperie y son resistentes a las condiciones climáticas más adversas.',
+          'Sí. Los paneles sándwich para muros ofrecen excelente terminación estética y resistencia, siendo aptos para fachadas industriales y comerciales.',
+      },
+      {
+        question: '¿Reemplazan la mampostería tradicional?',
+        answer:
+          'Sí. Integran cerramiento y aislación térmica en una sola solución constructiva.',
+      },
+      {
+        question: '¿Son resistentes a la intemperie?',
+        answer:
+          'Sí. Las chapas galvanizadas prepintadas están diseñadas para uso exterior industrial.',
+      },
+      {
+        question: '¿Realizan instalación?',
+        answer:
+          'Contamos con equipo técnico especializado en montaje de paneles sándwich en todo el país.',
       },
     ],
   },

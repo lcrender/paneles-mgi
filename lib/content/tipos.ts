@@ -3,18 +3,19 @@
  */
 
 export const tiposContent = {
-  'pir-pur': {
-    title: 'Paneles Sándwich PIR / PUR - Máxima Aislación Térmica',
+  'pir': {
+    title: 'Paneles Sándwich PIR - Máxima Aislación Térmica y Resistencia al Fuego',
     description:
-      'Paneles sándwich con núcleo de poliuretano (PIR/PUR). La mejor opción para aislación térmica en cámaras frigoríficas, naves industriales y construcciones que requieren eficiencia energética.',
-    h1: 'Paneles Sándwich PIR / PUR - Máxima Aislación Térmica',
+      'Paneles sándwich con núcleo de poliisocianurato (PIR). La mejor opción para aislación térmica con mayor resistencia al fuego. Ideal para cámaras frigoríficas y construcciones que requieren eficiencia energética y seguridad.',
+    h1: 'Paneles Sándwich PIR - Máxima Aislación Térmica y Resistencia al Fuego',
     content: `
-      <h2>¿Qué son los paneles PIR/PUR?</h2>
-      <p>Los paneles sándwich PIR/PUR utilizan un núcleo aislante de poliuretano (PIR - poliisocianurato o PUR - poliuretano). Este material ofrece la mejor relación entre aislación térmica y espesor, siendo la opción más eficiente para la mayoría de aplicaciones industriales y comerciales.</p>
+      <h2>¿Qué son los paneles PIR?</h2>
+      <p>Los paneles sándwich PIR utilizan un núcleo aislante de poliisocianurato (PIR), una evolución del poliuretano que ofrece la mejor relación entre aislación térmica, resistencia al fuego y espesor. Es la opción más eficiente y segura para la mayoría de aplicaciones industriales y comerciales.</p>
       
       <h2>Características principales</h2>
       <ul>
-        <li><strong>Excelente aislación térmica:</strong> Coeficiente de conductividad térmica (λ) entre 0.020 y 0.025 W/(m·K), uno de los más bajos del mercado</li>
+        <li><strong>Excelente aislación térmica:</strong> Coeficiente de conductividad térmica (λ) entre 0.020 y 0.022 W/(m·K), uno de los más bajos del mercado</li>
+        <li><strong>Mejor resistencia al fuego:</strong> Superior al PUR gracias a su estructura química modificada, con mejor comportamiento ante el fuego</li>
         <li><strong>Espesor reducido:</strong> Gracias a su alta eficiencia, permite lograr el mismo nivel de aislación con menor espesor que otros materiales</li>
         <li><strong>Resistencia estructural:</strong> Alta resistencia a la compresión y excelente comportamiento mecánico</li>
         <li><strong>Hermeticidad:</strong> Baja permeabilidad al vapor de agua, ideal para aplicaciones frigoríficas</li>
@@ -23,12 +24,21 @@ export const tiposContent = {
       </ul>
       
       <h2>Aplicaciones ideales</h2>
-      <p>Los paneles PIR/PUR son especialmente recomendados para:</p>
+      <p>Los paneles PIR son especialmente recomendados para:</p>
       <ul>
-        <li>Cámaras frigoríficas y congelados</li>
-        <li>Naves industriales que requieren climatización</li>
+        <li>Cámaras frigoríficas y congelados que requieren máxima eficiencia</li>
+        <li>Naves industriales que requieren climatización y seguridad contra incendios</li>
         <li>Techos y muros exteriores en climas extremos</li>
-        <li>Cualquier construcción donde la eficiencia energética sea prioritaria</li>
+        <li>Aplicaciones donde se prioriza tanto la eficiencia energética como la resistencia al fuego</li>
+        <li>Cualquier construcción donde la máxima aislación térmica sea prioritaria</li>
+      </ul>
+      
+      <h2>Ventajas del PIR sobre el PUR</h2>
+      <ul>
+        <li>Mayor resistencia al fuego gracias a su estructura química modificada</li>
+        <li>Ligeramente mejor aislación térmica (λ más bajo)</li>
+        <li>Mejor estabilidad dimensional a altas temperaturas</li>
+        <li>Mayor durabilidad en aplicaciones exigentes</li>
       </ul>
       
       <h2>Ventajas económicas</h2>
@@ -39,17 +49,8 @@ export const tiposContent = {
         <li>Menor coste de transporte e instalación por su ligereza</li>
       </ul>
       
-      <h2>Comparativa con otros tipos</h2>
-      <p>Comparado con paneles de lana de roca o EPS, los paneles PIR/PUR ofrecen:</p>
-      <ul>
-        <li>Mayor aislación térmica con menor espesor</li>
-        <li>Mejor hermeticidad al vapor</li>
-        <li>Mayor resistencia a la humedad</li>
-        <li>Sin embargo, los paneles de lana de roca ofrecen mejor resistencia al fuego</li>
-      </ul>
-      
       <h2>Espesores disponibles</h2>
-      <p>Fabricamos paneles PIR/PUR en una amplia gama de espesores:</p>
+      <p>Fabricamos paneles PIR en una amplia gama de espesores:</p>
       <ul>
         <li>40mm, 50mm, 60mm - Para aplicaciones con requisitos térmicos moderados</li>
         <li>80mm, 100mm - Para uso general en naves industriales</li>
@@ -59,24 +60,114 @@ export const tiposContent = {
     `,
     faqs: [
       {
-        question: '¿Cuál es la diferencia entre PIR y PUR?',
+        question: '¿Cuál es la diferencia entre paneles PIR y PUR?',
         answer:
-          'PIR (poliisocianurato) y PUR (poliuretano) son dos tipos de espumas de poliuretano. El PIR tiene mejor resistencia al fuego y ligeramente mejor aislación térmica que el PUR. Ambos son excelentes opciones, siendo el PIR ideal para aplicaciones que requieren mayor resistencia al fuego.',
+          'PIR (poliisocianurato) es una evolución mejorada del PUR (poliuretano). El PIR ofrece mejor resistencia al fuego, ligeramente mejor aislación térmica y mayor estabilidad dimensional. Es ideal para aplicaciones que requieren tanto máxima eficiencia térmica como mayor seguridad contra incendios.',
       },
       {
-        question: '¿Los paneles PIR/PUR son inflamables?',
+        question: '¿Los paneles PIR son inflamables?',
         answer:
-          'Los paneles PIR/PUR son materiales orgánicos que pueden ser inflamables. Sin embargo, nuestros paneles incluyen retardantes de llama que mejoran su comportamiento ante el fuego. Para aplicaciones que requieren mayor resistencia al fuego, recomendamos paneles de lana de roca.',
+          'Los paneles PIR son materiales orgánicos, pero gracias a su estructura química modificada tienen mejor resistencia al fuego que el PUR. Nuestros paneles incluyen retardantes de llama que mejoran aún más su comportamiento ante el fuego. Para aplicaciones con normativas muy estrictas de seguridad contra incendios, también ofrecemos paneles de lana de roca.',
       },
       {
-        question: '¿Cuánto tiempo duran los paneles PIR/PUR?',
+        question: '¿Cuánto tiempo duran los paneles PIR?',
         answer:
-          'Con un mantenimiento adecuado, los paneles PIR/PUR pueden durar más de 30 años sin perder sus propiedades aislantes. La durabilidad depende de factores como la exposición a la intemperie, el uso y el mantenimiento.',
+          'Con un mantenimiento adecuado, los paneles PIR pueden durar más de 30 años sin perder sus propiedades aislantes. Su estructura química modificada les proporciona mayor durabilidad y estabilidad que el PUR, especialmente en condiciones exigentes.',
       },
       {
         question: '¿Qué espesor necesito para mi proyecto?',
         answer:
           'El espesor necesario depende de varios factores: temperatura objetivo, normativas locales de aislación térmica, clima, y uso del espacio. Para proyectos estándar, recomendamos 80-100mm, pero para cámaras frigoríficas puede requerirse 150-200mm. Nuestros especialistas pueden asesorarte según tu proyecto específico.',
+      },
+      {
+        question: '¿Por qué elegir PIR en lugar de PUR?',
+        answer:
+          'El PIR es la mejor opción cuando necesitas la máxima eficiencia térmica junto con mejor resistencia al fuego. Si tu proyecto prioriza ambas características, el PIR es la elección recomendada. Si solo necesitas eficiencia térmica básica y el presupuesto es limitado, el PUR puede ser suficiente.',
+      },
+    ],
+  },
+  'pur': {
+    title: 'Paneles Sándwich PUR - Excelente Aislación Térmica',
+    description:
+      'Paneles sándwich con núcleo de poliuretano (PUR). Excelente opción para aislación térmica en cámaras frigoríficas, naves industriales y construcciones que requieren eficiencia energética a un costo competitivo.',
+    h1: 'Paneles Sándwich PUR - Excelente Aislación Térmica',
+    content: `
+      <h2>¿Qué son los paneles PUR?</h2>
+      <p>Los paneles sándwich PUR utilizan un núcleo aislante de poliuretano, un material que ofrece excelente relación entre aislación térmica y costo. Es una opción muy eficiente y competitiva para aplicaciones industriales y comerciales donde la eficiencia energética es prioritaria.</p>
+      
+      <h2>Características principales</h2>
+      <ul>
+        <li><strong>Excelente aislación térmica:</strong> Coeficiente de conductividad térmica (λ) entre 0.022 y 0.025 W/(m·K), muy eficiente</li>
+        <li><strong>Costo competitivo:</strong> Excelente relación calidad-precio para aplicaciones estándar</li>
+        <li><strong>Espesor reducido:</strong> Permite lograr buen nivel de aislación con menor espesor que otros materiales</li>
+        <li><strong>Resistencia estructural:</strong> Alta resistencia a la compresión y excelente comportamiento mecánico</li>
+        <li><strong>Hermeticidad:</strong> Baja permeabilidad al vapor de agua, ideal para aplicaciones frigoríficas</li>
+        <li><strong>Durabilidad:</strong> Buena vida útil con mantenimiento adecuado</li>
+        <li><strong>Ligereza:</strong> Peso reducido que facilita el transporte e instalación</li>
+      </ul>
+      
+      <h2>Aplicaciones ideales</h2>
+      <p>Los paneles PUR son especialmente recomendados para:</p>
+      <ul>
+        <li>Cámaras frigoríficas y congelados</li>
+        <li>Naves industriales que requieren climatización</li>
+        <li>Techos y muros exteriores</li>
+        <li>Aplicaciones donde se busca eficiencia energética a un costo optimizado</li>
+        <li>Construcciones comerciales e industriales estándar</li>
+      </ul>
+      
+      <h2>Ventajas económicas</h2>
+      <ul>
+        <li>Costo más competitivo que el PIR manteniendo excelente eficiencia térmica</li>
+        <li>Reducción significativa del consumo energético (hasta 35-40% menos que otros materiales)</li>
+        <li>Menor espesor permite aprovechar mejor el espacio útil</li>
+        <li>Rápido retorno de inversión gracias al ahorro energético</li>
+        <li>Menor coste de transporte e instalación por su ligereza</li>
+      </ul>
+      
+      <h2>Comparativa PIR vs PUR</h2>
+      <p>El PUR es una excelente opción cuando:</p>
+      <ul>
+        <li>Buscas eficiencia térmica a un costo más accesible</li>
+        <li>Tu proyecto no requiere máxima resistencia al fuego</li>
+        <li>Necesitas una solución probada y confiable</li>
+      </ul>
+      <p>Considera PIR si necesitas máxima eficiencia térmica y mejor resistencia al fuego.</p>
+      
+      <h2>Espesores disponibles</h2>
+      <p>Fabricamos paneles PUR en una amplia gama de espesores:</p>
+      <ul>
+        <li>40mm, 50mm, 60mm - Para aplicaciones con requisitos térmicos moderados</li>
+        <li>80mm, 100mm - Para uso general en naves industriales</li>
+        <li>120mm, 150mm - Para cámaras frigoríficas y refrigeración</li>
+        <li>180mm, 200mm - Para congelados y aplicaciones con temperaturas extremas</li>
+      </ul>
+    `,
+    faqs: [
+      {
+        question: '¿Cuál es la diferencia entre paneles PUR y PIR?',
+        answer:
+          'PUR (poliuretano) y PIR (poliisocianurato) son ambos excelentes aislantes. El PIR es una evolución del PUR con mejor resistencia al fuego y ligeramente mejor aislación térmica, pero a un costo mayor. El PUR ofrece excelente eficiencia térmica a un precio más competitivo, siendo ideal para la mayoría de aplicaciones estándar.',
+      },
+      {
+        question: '¿Los paneles PUR son inflamables?',
+        answer:
+          'Los paneles PUR son materiales orgánicos que pueden ser inflamables. Sin embargo, nuestros paneles incluyen retardantes de llama que mejoran su comportamiento ante el fuego. Para aplicaciones con normativas muy estrictas de seguridad contra incendios o cuando se requiere máxima resistencia al fuego, recomendamos paneles PIR o lana de roca.',
+      },
+      {
+        question: '¿Cuánto tiempo duran los paneles PUR?',
+        answer:
+          'Con un mantenimiento adecuado, los paneles PUR pueden durar más de 30 años sin perder sus propiedades aislantes. La durabilidad depende de factores como la exposición a la intemperie, el uso y el mantenimiento. Son una inversión de largo plazo que ofrece excelente retorno.',
+      },
+      {
+        question: '¿Qué espesor necesito para mi proyecto?',
+        answer:
+          'El espesor necesario depende de varios factores: temperatura objetivo, normativas locales de aislación térmica, clima, y uso del espacio. Para proyectos estándar, recomendamos 80-100mm, pero para cámaras frigoríficas puede requerirse 150-200mm. Nuestros especialistas pueden asesorarte según tu proyecto específico.',
+      },
+      {
+        question: '¿Por qué elegir PUR en lugar de PIR?',
+        answer:
+          'El PUR es la mejor opción cuando buscas excelente eficiencia térmica a un costo más competitivo. Si tu proyecto tiene presupuesto ajustado y no requiere máxima resistencia al fuego, el PUR ofrece una excelente relación calidad-precio. El PIR es ideal cuando necesitas las mejores prestaciones independientemente del costo.',
       },
     ],
   },

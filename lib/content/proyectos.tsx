@@ -34,7 +34,53 @@ export const PROYECTOS: Proyecto[] = [
       </>
     ),
     videoSrc: '/videos/paneles-para-camara-de-congelado-luccianos-low.mp4',
-    thumbnail: '/images/placeholder.svg', // Se reemplazará con la imagen real
+    thumbnail: '/images/proyectos/luccianos.jpg',
+    thumbnailAlt: 'Cámara de congelado Lucciano\'s - Paneles MGI',
+  },
+  {
+    id: 'proyecto-ejemplo-2',
+    title: 'Cámara de congelado realizada con paneles MGI',
+    description: (
+      <>
+        Proyecto ejecutado para Lucciano&apos;s
+        <br />
+        Soluciones de aislación para frío extremo por{' '}
+        <a
+          href="https://mgzerosrl.com.ar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary-600 hover:text-primary-700 underline"
+        >
+          MG Zero
+        </a>
+        .
+      </>
+    ),
+    videoSrc: '/videos/paneles-para-camara-de-congelado-luccianos-low.mp4',
+    thumbnail: '/images/proyectos/luccianos.jpg',
+    thumbnailAlt: 'Cámara de congelado Lucciano\'s - Paneles MGI',
+  },
+  {
+    id: 'proyecto-ejemplo-3',
+    title: 'Cámara de congelado realizada con paneles MGI',
+    description: (
+      <>
+        Proyecto ejecutado para Lucciano&apos;s
+        <br />
+        Soluciones de aislación para frío extremo por{' '}
+        <a
+          href="https://mgzerosrl.com.ar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary-600 hover:text-primary-700 underline"
+        >
+          MG Zero
+        </a>
+        .
+      </>
+    ),
+    videoSrc: '/videos/paneles-para-camara-de-congelado-luccianos-low.mp4',
+    thumbnail: '/images/proyectos/luccianos.jpg',
     thumbnailAlt: 'Cámara de congelado Lucciano\'s - Paneles MGI',
   },
 ]

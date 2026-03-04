@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 interface TwoColumnSectionProps {
   title?: string
   children: React.ReactNode
@@ -34,24 +32,25 @@ export default function TwoColumnSection({
 
           {/* Imagen */}
           <div className={`relative ${imageOrder}`}>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 shadow-lg">
-              {image.endsWith('.svg') ? (
+            {image.endsWith('.svg') ? (
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 shadow-lg">
                 <img
                   src={image}
                   alt={imageAlt}
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-              ) : (
-                <Image
+              </div>
+            ) : (
+              <div className="relative w-full overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                <img
                   src={image}
                   alt={imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="block w-full h-auto"
+                  loading="lazy"
                 />
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

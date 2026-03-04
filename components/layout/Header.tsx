@@ -14,17 +14,37 @@ export default function Header() {
   const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <nav className="container-custom" aria-label="Navegación principal">
-        <div className="flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-50 bg-transparent shadow-sm">
+      {/* Fondo blanco + borde diagonal (sutil) */}
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+        <svg
+          className="h-full w-full text-black/70"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          {/* Fondo blanco del header */}
+          <polygon points="0,0 100,0 100,99 0,99" fill="white" />
+          <line
+            x1="0"
+            y1="99"
+            x2="100"
+            y2="99"
+            stroke="currentColor"
+            strokeWidth="3"
+          />
+        </svg>
+      </div>
+
+      <nav className="container-custom relative z-10" aria-label="Navegación principal">
+        <div className="flex items-center justify-between pt-5 pb-7">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/paneles-mgi.png"
+              src="/images/mgi-paneles-logo.png"
               alt={SITE_CONFIG.name}
-              width={180}
-              height={60}
-              className="h-auto w-auto max-h-12 object-contain"
+              width={288}
+              height={96}
+              className="h-auto w-auto max-h-16 object-contain"
               priority
             />
           </Link>
