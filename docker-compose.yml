@@ -12,33 +12,30 @@ services:
       - PORT=3000
       - HOSTNAME=0.0.0.0
 
-      # Agregar variables de entorno adicionales aquí si las necesitas
-      # - NEXT_PUBLIC_API_URL=https://api.example.com
-      # - DATABASE_URL=postgresql://...
     networks:
       - root_default
+
     labels:
-      # Habilitar Traefik
       - "traefik.enable=true"
-      
-      # Router principal (HTTPS)
-      - "traefik.http.routers.paneles-mgi.rule=Host(`<DOMINIO_A_DEFINIR>`)"
+
+      # Router HTTPS (principal)
+      - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
       - "traefik.http.routers.paneles-mgi.entrypoints=websecure"
       - "traefik.http.routers.paneles-mgi.tls=true"
       - "traefik.http.routers.paneles-mgi.tls.certresolver=letsencrypt"
-      
-      # Servicio
+
+      # Servicio (puerto del contenedor Next.js)
       - "traefik.http.services.paneles-mgi.loadbalancer.server.port=3000"
-      
-      # Middleware (opcional - para redirección HTTP a HTTPS)
-      # Descomenta si quieres forzar HTTPS
-      # - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.scheme=https"
-      # - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.permanent=true"
-      # - "traefik.http.routers.paneles-mgi-http.rule=Host(`<DOMINIO_A_DEFINIR>`)"
-      # - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
-      # - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
+
+      # Router HTTP (redirige a HTTPS)
+      - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
+      - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
+      - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
+
+      # Middleware redirección HTTPS
+      - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.permanent=true"
 
 networks:
   root_default:
     external: true
-
