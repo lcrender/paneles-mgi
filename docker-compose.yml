@@ -20,15 +20,16 @@ services:
     - "traefik.enable=true"
     - "traefik.docker.network=root_default"
 
-    - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
+    # HTTPS router
+    - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`) || Host(`www.mgipaneles.com.ar`)"
     - "traefik.http.routers.paneles-mgi.entrypoints=websecure"
     - "traefik.http.routers.paneles-mgi.tls=true"
-    - "traefik.http.routers.paneles-mgi.tls.certresolver=letsencrypt"
-    - "traefik.http.routers.paneles-mgi.service=paneles-mgi"
 
+    # service
     - "traefik.http.services.paneles-mgi.loadbalancer.server.port=3000"
 
-    - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
+    # HTTP → HTTPS redirect
+    - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`) || Host(`www.mgipaneles.com.ar`)"
     - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
     - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
 
