@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: paneles-mgi-web
     restart: always
+
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -17,22 +18,22 @@ services:
 
     labels:
       - "traefik.enable=true"
+      - "traefik.docker.network=root_default"
 
-      # Router HTTPS (principal)
+      # HTTPS router
       - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
       - "traefik.http.routers.paneles-mgi.entrypoints=websecure"
       - "traefik.http.routers.paneles-mgi.tls=true"
       - "traefik.http.routers.paneles-mgi.tls.certresolver=letsencrypt"
 
-      # Servicio (puerto del contenedor Next.js)
+      # servicio
       - "traefik.http.services.paneles-mgi.loadbalancer.server.port=3000"
 
-      # Router HTTP (redirige a HTTPS)
+      # HTTP → HTTPS redirect
       - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
       - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
       - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
 
-      # Middleware redirección HTTPS
       - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.permanent=true"
 
