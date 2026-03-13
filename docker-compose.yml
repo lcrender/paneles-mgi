@@ -17,25 +17,23 @@ services:
       - root_default
 
     labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=root_default"
+    - "traefik.enable=true"
+    - "traefik.docker.network=root_default"
 
-      # HTTPS router
-      - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
-      - "traefik.http.routers.paneles-mgi.entrypoints=websecure"
-      - "traefik.http.routers.paneles-mgi.tls=true"
-      - "traefik.http.routers.paneles-mgi.tls.certresolver=letsencrypt"
+    - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
+    - "traefik.http.routers.paneles-mgi.entrypoints=websecure"
+    - "traefik.http.routers.paneles-mgi.tls=true"
+    - "traefik.http.routers.paneles-mgi.tls.certresolver=letsencrypt"
+    - "traefik.http.routers.paneles-mgi.service=paneles-mgi"
 
-      # servicio
-      - "traefik.http.services.paneles-mgi.loadbalancer.server.port=3000"
+    - "traefik.http.services.paneles-mgi.loadbalancer.server.port=3000"
 
-      # HTTP → HTTPS redirect
-      - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
-      - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
-      - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
+    - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`,`www.mgipaneles.com.ar`)"
+    - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
+    - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
 
-      - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.permanent=true"
+    - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.scheme=https"
+    - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.permanent=true"
 
 networks:
   root_default:
