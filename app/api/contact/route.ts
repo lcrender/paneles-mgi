@@ -69,7 +69,8 @@ export async function POST(request: Request) {
   try {
     await sendContactEmail(trimmed)
   } catch (err) {
-    console.error('[contact]', err)
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error('[contact] envío SMTP falló:', msg)
     return NextResponse.json(
       { error: 'No se pudo enviar el mensaje. Intentá más tarde.' },
       { status: 502 }

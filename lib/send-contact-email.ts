@@ -27,6 +27,23 @@ export function isSmtpConfigured(): boolean {
   return Boolean(host && user && pass && fromEmail && to)
 }
 
+/** Solo nombres de variables faltantes; no incluye valores ni contraseñas. */
+export function getSmtpEnvDiagnostics(): {
+  configured: boolean
+  missing: string[]
+} {
+  const { host, user, pass, fromEmail, to } = getSmtpConfig()
+  const missing: string[] = []
+  if (!host?.trim()) missing.push('SMTP_HOST')
+  if (!user?.trim()) missing.push('SMTP_USER')
+  if (!pass?.trim()) missing.push('SMTP_PASS')
+  if (!fromEmail?.trim()) {
+    missing.push('SMTP_FROM_EMAIL')
+  }
+  if (!to?.trim()) missing.push('CONTACT_TO_EMAIL')
+  return { configured: missing.length === 0, missing }
+}
+
 export async function sendContactEmail(data: ContactFormPayload): Promise<void> {
   const { host, port, user, pass, fromName, fromEmail, to, bcc } = getSmtpConfig()
 
