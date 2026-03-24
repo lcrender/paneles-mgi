@@ -8,9 +8,12 @@ import {
 } from '@/components/paneles/panel-product-sections'
 
 export const metadata: Metadata = {
-  title: 'Tipos de Paneles Sándwich - PIR, EPS y Lana de Roca',
+  title: 'Tipos de paneles sándwich — PIR, PUR y núcleos aislantes',
   description:
-    'Conoce los tipos de paneles sándwich disponibles: PIR, EPS y Lana de Roca. Especificaciones técnicas y aplicaciones.',
+    'Paneles sándwich PIR y PUR: especificaciones, núcleos aislantes (también EPS y lana de roca en otras líneas) y aplicaciones industriales.',
+  alternates: {
+    canonical: '/paneles-sandwich/tipos',
+  },
 }
 
 export default function TiposPage() {

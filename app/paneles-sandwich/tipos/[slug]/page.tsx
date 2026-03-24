@@ -30,13 +30,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const canonicalPath = `/paneles-sandwich/tipos/${slug}`
+
   return {
     title: content.title,
     description: content.description,
+    alternates: {
+      canonical: `${SITE_CONFIG.url}${canonicalPath}`,
+    },
     openGraph: {
       title: content.title,
       description: content.description,
       type: 'website',
+      url: `${SITE_CONFIG.url}${canonicalPath}`,
     },
   }
 }

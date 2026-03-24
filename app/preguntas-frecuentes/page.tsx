@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Preguntas Frecuentes - Paneles Sándwich',
   description:
     'Responde tus dudas sobre paneles sándwich: tipos, espesores, precios, instalación y más.',
+  alternates: {
+    canonical: '/preguntas-frecuentes',
+  },
 }
 
 const generalFAQs = [

@@ -4,14 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { SITE_CONFIG, USOS } from '@/lib/constants'
-import { generateWhatsAppLink } from '@/lib/utils'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [usosMenuOpen, setUsosMenuOpen] = useState(false)
-
-  const whatsappMessage = 'Hola, estoy interesado en paneles sándwich'
-  const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
 
   return (
     <header className="sticky top-0 z-50 bg-transparent shadow-sm">
@@ -111,27 +107,11 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/guias"
-              className="text-base font-medium text-gray-700 transition-colors hover:text-primary-600"
-            >
-              Guías
-            </Link>
-
-            <Link
               href="/contacto"
               className="text-base font-medium text-gray-700 transition-colors hover:text-primary-600"
             >
               Contacto
             </Link>
-
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp"
-            >
-              WhatsApp
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -207,30 +187,12 @@ export default function Header() {
               </Link>
 
               <Link
-                href="/guias"
-                className="block px-4 py-2 text-base font-medium text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Guías
-              </Link>
-
-              <Link
                 href="/contacto"
                 className="block px-4 py-2 text-base font-medium text-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contacto
               </Link>
-
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp mx-4 block text-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                WhatsApp
-              </a>
             </div>
           </div>
         )}

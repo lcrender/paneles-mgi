@@ -4,6 +4,7 @@ import Hero from '@/components/ui/Hero'
 import CTA from '@/components/ui/CTA'
 import FAQ from '@/components/ui/FAQ'
 import { especificacionesContent } from '@/lib/content/especificaciones'
+import { SITE_CONFIG } from '@/lib/constants'
 
 interface PageProps {
   params: Promise<{
@@ -29,13 +30,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const canonicalPath = `/paneles-sandwich/especificaciones/${slug}`
+
   return {
     title: content.title,
     description: content.description,
+    alternates: {
+      canonical: `${SITE_CONFIG.url}${canonicalPath}`,
+    },
     openGraph: {
       title: content.title,
       description: content.description,
       type: 'website',
+      url: `${SITE_CONFIG.url}${canonicalPath}`,
     },
   }
 }

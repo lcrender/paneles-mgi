@@ -18,13 +18,23 @@ export default function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      // Aquí se integraría con un servicio de email o API
-      // Por ahora simulamos el envío
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = (await res.json().catch(() => ({}))) as { error?: string }
+
+      if (!res.ok) {
+        console.error('[contact]', data.error || res.statusText)
+        setSubmitStatus('error')
+        return
+      }
 
       setSubmitStatus('success')
       setFormData({ name: '', email: '', phone: '', message: '' })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

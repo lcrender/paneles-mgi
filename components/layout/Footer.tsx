@@ -23,14 +23,17 @@ export default function Footer() {
               <p>
                 <strong>Teléfono:</strong>{' '}
                 <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-primary-400">
-                  {SITE_CONFIG.phone}
+                  {SITE_CONFIG.phoneDisplay}
                 </a>
               </p>
               <p>
-                <strong>Email:</strong>{' '}
-                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-primary-400">
-                  {SITE_CONFIG.email}
-                </a>
+                <strong>Dirección:</strong>
+                <br />
+                {SITE_CONFIG.address.street}
+                <br />
+                {SITE_CONFIG.address.city}, {SITE_CONFIG.address.province}
+                <br />
+                {SITE_CONFIG.address.country}
               </p>
             </div>
           </div>

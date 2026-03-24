@@ -1,4 +1,6 @@
-version: '3.8'
+# Producción detrás de Traefik: la red root_default debe existir (la crea el stack de Traefik).
+# En local sin esa red: docker network create root_default
+#   o usá: docker compose -f docker-compose.local.yml up -d --build
 
 services:
   web:
@@ -9,9 +11,17 @@ services:
     restart: always
 
     environment:
-      - NODE_ENV=production
-      - PORT=3000
-      - HOSTNAME=0.0.0.0
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      SMTP_FROM_NAME: ${SMTP_FROM_NAME:-Paneles MGI}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL}
+      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL}
+      CONTACT_BCC_EMAIL: ${CONTACT_BCC_EMAIL}
 
     networks:
       - root_default
@@ -38,4 +48,4 @@ services:
 
 networks:
   root_default:
-    external: true
+    external: true # debe existir en el host (p. ej. creada por Traefik)

@@ -13,6 +13,9 @@ export const metadata = {
   title: 'Paneles Sándwich para Construcción Industrial y Cámaras Frigoríficas',
   description:
     'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros. Aislación térmica superior con entrega e instalación.',
+  alternates: {
+    canonical: '/',
+  },
 }
 
 const homeFAQs = [

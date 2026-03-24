@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Contacto - Solicita tu Cotización',
   description:
     'Contacta con nosotros para solicitar una cotización de paneles sándwich. Estamos para ayudarte con tu proyecto.',
+  alternates: {
+    canonical: '/contacto',
+  },
 }
 
 export default function ContactPage() {
@@ -39,16 +42,7 @@ export default function ContactPage() {
                       href={`tel:${SITE_CONFIG.phone}`}
                       className="text-gray-600 hover:text-primary-600"
                     >
-                      {SITE_CONFIG.phone}
-                    </a>
-                  </div>
-                  <div>
-                    <h3 className="mb-2 font-semibold text-gray-900">Email</h3>
-                    <a
-                      href={`mailto:${SITE_CONFIG.email}`}
-                      className="text-gray-600 hover:text-primary-600"
-                    >
-                      {SITE_CONFIG.email}
+                      {SITE_CONFIG.phoneDisplay}
                     </a>
                   </div>
                   <div>

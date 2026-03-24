@@ -3,27 +3,32 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import OrganizationSchema from '@/components/seo/OrganizationSchema'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
+import { SITE_CONFIG } from '@/lib/constants'
+
+const siteUrl = new URL(SITE_CONFIG.url)
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://panelesmgi.com'),
+  metadataBase: siteUrl,
   title: {
     default: 'Paneles Sándwich MGI - Aislación Térmica y Construcción Industrial',
     template: '%s | Paneles Sándwich MGI',
   },
-  description: 'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros. Aislación térmica superior con paneles PIR, PUR y lana de roca.',
+  description:
+    'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros. Aislación térmica superior con paneles PIR y PUR.',
   keywords: ['paneles sándwich', 'paneles frigoríficos', 'aislación térmica', 'cámaras frigoríficas', 'naves industriales'],
   authors: [{ name: 'Paneles MGI' }],
   creator: 'Paneles MGI',
   openGraph: {
     type: 'website',
     locale: 'es_AR',
-    url: 'https://panelesmgi.com',
+    url: SITE_CONFIG.url,
     siteName: 'Paneles Sándwich MGI',
     title: 'Paneles Sándwich MGI - Aislación Térmica y Construcción Industrial',
     description: 'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/MGI-Paneles.png',
         width: 1200,
         height: 630,
         alt: 'Paneles Sándwich MGI',
@@ -34,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Paneles Sándwich MGI - Aislación Térmica y Construcción Industrial',
     description: 'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros.',
-    images: ['/og-image.jpg'],
+    images: ['/images/MGI-Paneles.png'],
   },
   robots: {
     index: true,
@@ -66,6 +71,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   )

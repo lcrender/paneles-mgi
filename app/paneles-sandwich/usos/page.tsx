@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Usos de Paneles Sándwich - Aplicaciones Industriales y Comerciales',
   description:
     'Descubre los diferentes usos de los paneles sándwich: cámaras frigoríficas, naves industriales, techos, muros y más. Soluciones de aislación térmica para cada necesidad.',
+  alternates: {
+    canonical: '/paneles-sandwich/usos',
+  },
 }
 
 export default function UsosPage() {

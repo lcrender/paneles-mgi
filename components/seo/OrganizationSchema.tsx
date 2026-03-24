@@ -6,7 +6,7 @@ export default function OrganizationSchema() {
     '@type': 'Organization',
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/images/paneles-mgi.png`,
+    logo: `${SITE_CONFIG.url}/images/mgi-paneles-logo.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: SITE_CONFIG.phone,

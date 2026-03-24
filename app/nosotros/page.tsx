@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Nosotros - Paneles Sándwich MGI',
+  title: 'Nosotros',
   description:
-    'Conoce más sobre Paneles Sándwich MGI. Empresa especializada en fabricación y venta de paneles sándwich para construcción industrial.',
+    'Conocé Paneles Sándwich MGI: fabricación y venta de paneles sándwich para construcción industrial, cámaras frigoríficas y aislación térmica.',
+  alternates: {
+    canonical: '/nosotros',
+  },
 }
 
 export default function NosotrosPage() {

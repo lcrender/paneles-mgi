@@ -52,22 +52,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   let description: string = content.description
 
   if (slug === 'camaras-frigorificas') {
-    title = 'Paneles sandwich para cámaras frigoríficas'
+    title = 'Paneles sándwich para cámaras frigoríficas'
     description =
       'Soluciones de aislación térmica para cámaras de refrigeración: mayor eficiencia energética, hermeticidad y durabilidad. Fabricación a medida y asesoramiento técnico para tu proyecto.'
   } else if (slug === 'congelados') {
-    title = 'Paneles sandwich para cámaras de congelado'
+    title = 'Paneles sándwich para cámaras de congelado'
     description =
       'Soluciones de aislación térmica para baja temperatura: mayor eficiencia energética, hermeticidad y durabilidad en cámaras de congelado. Fabricación a medida y asesoramiento técnico.'
   }
 
+  const canonicalPath = `/paneles-sandwich/usos/${slug}`
+
   return {
     title,
     description,
+    alternates: {
+      canonical: `${SITE_CONFIG.url}${canonicalPath}`,
+    },
     openGraph: {
       title,
       description,
       type: 'website',
+      url: `${SITE_CONFIG.url}${canonicalPath}`,
     },
   }
 }

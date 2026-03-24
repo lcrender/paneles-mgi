@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Especificaciones Técnicas de Paneles Sándwich',
   description:
     'Información técnica completa sobre espesores, precios, aislación térmica y características de nuestros paneles sándwich.',
+  alternates: {
+    canonical: '/paneles-sandwich/especificaciones',
+  },
 }
 
 const especificacionesLinks = [

@@ -1,0 +1,27 @@
+# Desarrollo local (sin Traefik ni red externa).
+# Uso: docker compose -f docker-compose.local.yml up -d --build
+# Sitio: http://localhost:3000
+#
+# SMTP: mismas variables que en .env.example (compose lee .env del directorio).
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: paneles-mgi-web-local
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      SMTP_FROM_NAME: ${SMTP_FROM_NAME:-Paneles MGI}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL}
+      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL}
+      CONTACT_BCC_EMAIL: ${CONTACT_BCC_EMAIL}

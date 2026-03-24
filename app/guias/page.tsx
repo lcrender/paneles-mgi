@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Guías y Artículos - Información sobre Paneles Sándwich',
+  title: 'Guías y artículos',
   description:
-    'Guías útiles, artículos y recursos sobre paneles sándwich, construcción industrial y aislación térmica.',
+    'Guías y recursos sobre paneles sándwich, construcción industrial y aislación térmica.',
+  alternates: {
+    canonical: '/guias',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function GuiasPage() {

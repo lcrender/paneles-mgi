@@ -4,13 +4,15 @@
 
 export const SITE_CONFIG = {
   name: 'Paneles Sándwich MGI',
-  url: 'https://panelesmgi.com',
-  phone: '+5491123456789', // Reemplazar con teléfono real
-  email: 'contacto@panelesmgi.com', // Reemplazar con email real
-  whatsapp: '+5491123456789', // Reemplazar con WhatsApp real
+  /** URL canónica del sitio (sitemap, OG, schema). Debe coincidir con el dominio público. */
+  url: 'https://mgipaneles.com.ar',
+  /** E.164 para tel: y schema.org */
+  phone: '+5491121662299',
+  phoneDisplay: '(+54 9) 11 2166-2299',
+  whatsapp: '+5491121662299',
   address: {
-    street: 'Dirección de la empresa',
-    city: 'Buenos Aires',
+    street: 'Presidente Perón 3773',
+    city: 'Haedo, El Palomar',
     province: 'Buenos Aires',
     country: 'Argentina',
   },

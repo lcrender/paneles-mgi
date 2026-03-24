@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Zonas de Cobertura - Paneles Sándwich MGI',
+  title: 'Zonas de cobertura',
   description:
-    'Zonas donde ofrecemos servicios de paneles sándwich. Cobertura en múltiples ciudades y regiones.',
+    'Envío de paneles sándwich y asesoramiento en Argentina. Consultanos por cobertura en tu zona.',
+  alternates: {
+    canonical: '/zonas',
+  },
 }
 
 export default function ZonasPage() {
