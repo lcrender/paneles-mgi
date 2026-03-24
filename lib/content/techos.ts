@@ -4,8 +4,8 @@
 
 export const techosContent = {
   hero: {
-    h1: 'Paneles Sándwich para Techos',
-    subtitle: 'Cubiertas aislantes para construcción industrial y comercial en Argentina',
+    h1: 'Paneles Sándwich Trapezoidales para Techos',
+    subtitle: '',
     secondaryLine:
       'En MGI Paneles ofrecemos sistemas de paneles sándwich para techos diseñados para lograr aislación térmica, resistencia estructural y rapidez de instalación en naves industriales, galpones, depósitos y construcciones comerciales.',
     introBeforeBullets: 'Nuestros paneles de cubierta integran en una sola solución:',

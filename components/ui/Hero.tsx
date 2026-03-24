@@ -14,6 +14,8 @@ interface HeroProps {
   rightImageAlt?: string
   /** Si true, la imagen derecha se muestra con tamaño grande (aprox. el doble) */
   rightImageLarge?: boolean
+  /** Si true, la imagen derecha solo se muestra en desktop */
+  rightImageDesktopOnly?: boolean
   primaryCta?: {
     text: string
     href: string
@@ -32,6 +34,7 @@ export default function Hero({
   rightImage,
   rightImageAlt = 'Paneles sándwich MGI',
   rightImageLarge = false,
+  rightImageDesktopOnly = false,
   primaryCta,
   secondaryCta,
 }: HeroProps) {
@@ -129,8 +132,8 @@ export default function Hero({
             <div
               className={
                 rightImageLarge
-                  ? 'order-first w-full max-w-lg shrink-0 lg:order-last lg:-mr-12 lg:max-w-[48%] xl:-mr-16 xl:max-w-[45%]'
-                  : 'order-first w-full max-w-sm shrink-0 lg:order-last lg:max-w-md xl:max-w-lg'
+                  ? `${rightImageDesktopOnly ? 'hidden lg:block' : 'order-first'} w-full max-w-lg shrink-0 lg:order-last lg:-mr-12 lg:max-w-[48%] xl:-mr-16 xl:max-w-[45%]`
+                  : `${rightImageDesktopOnly ? 'hidden lg:block' : 'order-first'} w-full max-w-sm shrink-0 lg:order-last lg:max-w-md xl:max-w-lg`
               }
             >
               <div

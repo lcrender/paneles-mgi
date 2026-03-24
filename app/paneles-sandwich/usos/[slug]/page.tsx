@@ -16,6 +16,14 @@ import { techosContent } from '@/lib/content/techos'
 import { murosContent } from '@/lib/content/muros'
 import { USOS, SITE_CONFIG } from '@/lib/constants'
 import { generateWhatsAppLink } from '@/lib/utils'
+import {
+  PanelEcoTrapezoidalSection,
+  PanelFrigorificoSection,
+  PanelMuroSection,
+  PanelProductSectionDivider,
+  PanelProductSectionDividerLight,
+  PanelTrapezoidalSection,
+} from '@/components/paneles/panel-product-sections'
 
 interface PageProps {
   params: Promise<{
@@ -120,7 +128,7 @@ export default async function UsoPage({ params }: PageProps) {
         />
 
         {/* Sistemas de Paneles Frigoríficos */}
-        <section className="section-padding bg-white">
+        <section className="hidden section-padding bg-white">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl">
               <h2 className="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -143,6 +151,8 @@ export default async function UsoPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        <PanelFrigorificoSection />
 
         {/* Explicación Técnica */}
         <TwoColumnSection
@@ -223,7 +233,7 @@ export default async function UsoPage({ params }: PageProps) {
         </section>
 
         {/* Aplicaciones */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-white">
           <div className="container-custom">
             <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               {camarasFrigorificasContent.aplicaciones.h2}
@@ -397,6 +407,10 @@ export default async function UsoPage({ params }: PageProps) {
           secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
         />
 
+        <PanelFrigorificoSection />
+
+        <PanelProductSectionDivider />
+
         {/* Explicación Técnica - Imagen izquierda, texto derecha con contenedor */}
         <TwoColumnSection
           title={congContent.explicacionTecnica.h2}
@@ -429,7 +443,7 @@ export default async function UsoPage({ params }: PageProps) {
         </TwoColumnSection>
 
         {/* Ventajas - Grid de cards */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-white">
           <div className="container-custom">
             <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               {congContent.ventajas.h2}
@@ -492,7 +506,7 @@ export default async function UsoPage({ params }: PageProps) {
         </section>
 
         {/* Espesores Recomendados + Especificaciones */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl space-y-10">
               <div>
@@ -613,6 +627,12 @@ export default async function UsoPage({ params }: PageProps) {
           secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
         />
 
+        <PanelTrapezoidalSection variant="naves" />
+        <PanelProductSectionDivider />
+        <PanelMuroSection />
+        <PanelProductSectionDividerLight />
+        <PanelEcoTrapezoidalSection />
+
         <TwoColumnSection
           title={navContent.explicacionTecnica.h2}
           image="/images/usos/industriales/paneles-sandwich-para-naves-industriales.jpg"
@@ -665,7 +685,7 @@ export default async function UsoPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-white">
           <div className="container-custom">
             <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               {navContent.aplicaciones.h2}
@@ -691,6 +711,12 @@ export default async function UsoPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        <div className="bg-white">
+          <div className="container-custom">
+            <hr className="border-gray-200" />
+          </div>
+        </div>
 
         <section className="section-padding bg-white">
           <div className="container-custom">
@@ -810,7 +836,7 @@ export default async function UsoPage({ params }: PageProps) {
     const tecContent = techosContent
     const heroDesc = (
       <>
-        <p>{tecContent.hero.subtitle}</p>
+        {tecContent.hero.subtitle && <p>{tecContent.hero.subtitle}</p>}
         {tecContent.hero.secondaryLine && <p>{tecContent.hero.secondaryLine}</p>}
         {tecContent.hero.introBeforeBullets && <p>{tecContent.hero.introBeforeBullets}</p>}
         <ul className="list-none space-y-2">
@@ -831,8 +857,22 @@ export default async function UsoPage({ params }: PageProps) {
           description={heroDesc}
           image="/images/usos/techos/paneles-para-techos.jpg"
           imageAlt="Paneles sándwich para techos"
+          rightImage="/images/panel-sandwich-trapezoidal-para-techo.png"
+          rightImageAlt="Panel sándwich trapezoidal para techo"
+          rightImageDesktopOnly
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
           secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+        />
+
+        <PanelTrapezoidalSection
+          id="panel-trapezoidal"
+          variant="techos"
+          className="section-padding scroll-mt-24 bg-white"
+        />
+        <PanelProductSectionDivider />
+        <PanelEcoTrapezoidalSection
+          id="panel-eco-trapezoidal"
+          className="section-padding scroll-mt-24 bg-white"
         />
 
         <TwoColumnSection
@@ -919,11 +959,13 @@ export default async function UsoPage({ params }: PageProps) {
             <h2 className="mb-8 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               {tecContent.tiposPanel.h2}
             </h2>
-            <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
+            <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
               {tecContent.tiposPanel.items.map((item, i) => (
                 <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 p-6">
-                  <div className="mb-3 text-2xl" aria-hidden>{item.emoji}</div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900">{item.titulo}</h3>
+                  <h3 className="mb-2 flex items-center gap-2 text-lg font-bold text-gray-900">
+                    <span className="text-2xl" aria-hidden>{item.emoji}</span>
+                    {item.titulo}
+                  </h3>
                   <p className="text-gray-700">{item.descripcion}</p>
                 </div>
               ))}
@@ -1051,6 +1093,10 @@ export default async function UsoPage({ params }: PageProps) {
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
           secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
         />
+
+        <PanelMuroSection />
+        <PanelProductSectionDivider />
+        <PanelFrigorificoSection />
 
         <TwoColumnSection
           title={murContent.explicacionTecnica.h2}
