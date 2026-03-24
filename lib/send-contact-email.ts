@@ -51,11 +51,27 @@ export async function sendContactEmail(data: ContactFormPayload): Promise<void> 
     throw new Error('SMTP no configurado')
   }
 
+  // 465 = SSL implícito; 587 = STARTTLS (secure false + requireTLS)
+  const implicitTls = port === 465
+  const rejectUnauthorized =
+    process.env.SMTP_TLS_REJECT_UNAUTHORIZED !== 'false' &&
+    process.env.SMTP_TLS_REJECT_UNAUTHORIZED !== '0'
+
   const transporter = nodemailer.createTransport({
     host,
     port,
-    secure: port === 465,
+    secure: implicitTls,
+    requireTLS: port === 587,
     auth: { user, pass },
+    connectionTimeout: 20_000,
+    greetingTimeout: 20_000,
+    socketTimeout: 20_000,
+    tls: {
+      minVersion: 'TLSv1.2',
+      servername: host,
+      rejectUnauthorized,
+    },
+    debug: process.env.SMTP_DEBUG === 'true',
   })
 
   const text = [
