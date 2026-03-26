@@ -25,7 +25,7 @@ export const USOS = [
     slug: '/paneles-sandwich/usos/camaras-frigorificas',
     description: 'Soluciones térmicas para conservación y refrigeración con núcleos PIR o EPS. Alta estanqueidad y control preciso de temperatura.',
     image: '/images/usos/camaras-frigorificas.jpg',
-    homeImage: '/images/home/paneles-para-camaras-frigorificas.jpg',
+    homeImage: '/images/paneles-para-camaras-frigorificas.jpg',
   },
   {
     id: 'congelados',
@@ -41,7 +41,7 @@ export const USOS = [
     slug: '/paneles-sandwich/usos/naves-industriales',
     description: 'Construcción eficiente de naves industriales, depósitos y centros logísticos con excelente relación costo-beneficio.',
     image: '/images/usos/naves-industriales.jpg',
-    homeImage: '/images/home/paneles-para-naves-industriales.jpg',
+    homeImage: '/images/paneles-para-construccion-industrial.jpg',
   },
   {
     id: 'techos',
@@ -49,7 +49,7 @@ export const USOS = [
     slug: '/paneles-sandwich/usos/techos',
     description: 'Cubiertas autoportantes con aislación térmica integrada, ideales para reducir transferencia térmica y condensación.',
     image: '/images/usos/techos.jpg',
-    homeImage: '/images/home/paneles-sandwich-para-techos.jpg',
+    homeImage: '/images/paneles-para-techos.jpg',
   },
   {
     id: 'muros',
@@ -57,7 +57,7 @@ export const USOS = [
     slug: '/paneles-sandwich/usos/muros',
     description: 'Cerramientos exteriores e interiores con fijaciones ocultas y terminación arquitectónica limpia.',
     image: '/images/usos/muros.jpg',
-    homeImage: '/images/home/paneles-sandwich-para-muro.jpg',
+    homeImage: '/images/paneles-para-muro.jpg',
   },
 ] as const
 

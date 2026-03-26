@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { isSmtpConfigured, sendContactEmail } from '@/lib/send-contact-email'
+import { formatSmtpErrorForLog } from '@/lib/smtp-error-log'
 
 const MAX = {
   name: 200,
@@ -69,8 +70,7 @@ export async function POST(request: Request) {
   try {
     await sendContactEmail(trimmed)
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err)
-    console.error('[contact] envío SMTP falló:', msg)
+    console.error('[contact] envío SMTP falló:', formatSmtpErrorForLog(err))
     return NextResponse.json(
       { error: 'No se pudo enviar el mensaje. Intentá más tarde.' },
       { status: 502 }
