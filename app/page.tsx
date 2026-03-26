@@ -112,6 +112,11 @@ export default function HomePage() {
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
             Tipos de Paneles Sándwich Disponibles
           </h2>
+          <div className="mb-10 flex justify-center">
+            <Link href="/paneles-sandwich/tipos" className="btn-primary">
+              Ver Fichas Tecnicas de nuestros paneles
+            </Link>
+          </div>
 
           <div className="space-y-10">
             {/* 3 columnas en desktop */}
