@@ -52,7 +52,7 @@ export default function ProjectCard({
         </div>
 
         {/* Content */}
-        <h2 className="mb-2 text-xl font-semibold text-gray-900">{title}</h2>
+        <h3 className="mb-2 text-xl font-semibold text-gray-900">{title}</h3>
         <div className="text-gray-600">{description}</div>
       </div>
 

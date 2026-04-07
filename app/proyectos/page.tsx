@@ -6,8 +6,13 @@ export const metadata: Metadata = {
   title: 'Proyectos - Galería de Obras Realizadas',
   description:
     'Conoce nuestros proyectos realizados con paneles sándwich: cámaras frigoríficas, naves industriales y más.',
-  alternates: {
+  alternates:
+  {
     canonical: '/proyectos',
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 }
 

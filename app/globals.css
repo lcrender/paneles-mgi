@@ -41,6 +41,11 @@
   .section-padding {
     @apply py-16 md:py-24;
   }
+
+  .gtm-noscript-frame {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 @layer utilities {

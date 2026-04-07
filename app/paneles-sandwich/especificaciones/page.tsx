@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/paneles-sandwich/especificaciones',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 const especificacionesLinks = [

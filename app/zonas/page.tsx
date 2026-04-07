@@ -4,8 +4,13 @@ export const metadata: Metadata = {
   title: 'Zonas de cobertura',
   description:
     'Envío de paneles sándwich y asesoramiento en Argentina. Consultanos por cobertura en tu zona.',
-  alternates: {
+  alternates:
+  {
     canonical: '/zonas',
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 }
 

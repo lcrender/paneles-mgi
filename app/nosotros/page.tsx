@@ -4,8 +4,13 @@ export const metadata: Metadata = {
   title: 'Nosotros',
   description:
     'Conocé Paneles Sándwich MGI: fabricación y venta de paneles sándwich para construcción industrial, cámaras frigoríficas y aislación térmica.',
-  alternates: {
+  alternates:
+  {
     canonical: '/nosotros',
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 }
 

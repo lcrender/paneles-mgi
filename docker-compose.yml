@@ -30,21 +30,35 @@ services:
     - "traefik.enable=true"
     - "traefik.docker.network=root_default"
 
-    # HTTPS router
-    - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`) || Host(`www.mgipaneles.com.ar`)"
+    # HTTPS router canónico (solo dominio sin www)
+    - "traefik.http.routers.paneles-mgi.rule=Host(`mgipaneles.com.ar`)"
     - "traefik.http.routers.paneles-mgi.entrypoints=websecure"
     - "traefik.http.routers.paneles-mgi.tls=true"
 
     # service
     - "traefik.http.services.paneles-mgi.loadbalancer.server.port=3000"
 
-    # HTTP → HTTPS redirect
-    - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`) || Host(`www.mgipaneles.com.ar`)"
+    # HTTP apex -> HTTPS apex
+    - "traefik.http.routers.paneles-mgi-http.rule=Host(`mgipaneles.com.ar`)"
     - "traefik.http.routers.paneles-mgi-http.entrypoints=web"
     - "traefik.http.routers.paneles-mgi-http.middlewares=paneles-mgi-redirect"
 
     - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.scheme=https"
     - "traefik.http.middlewares.paneles-mgi-redirect.redirectscheme.permanent=true"
+
+    # www (http y https) -> canónico https://mgipaneles.com.ar
+    - "traefik.http.routers.paneles-mgi-www-http.rule=Host(`www.mgipaneles.com.ar`)"
+    - "traefik.http.routers.paneles-mgi-www-http.entrypoints=web"
+    - "traefik.http.routers.paneles-mgi-www-http.middlewares=paneles-mgi-www-redirect"
+
+    - "traefik.http.routers.paneles-mgi-www-https.rule=Host(`www.mgipaneles.com.ar`)"
+    - "traefik.http.routers.paneles-mgi-www-https.entrypoints=websecure"
+    - "traefik.http.routers.paneles-mgi-www-https.tls=true"
+    - "traefik.http.routers.paneles-mgi-www-https.middlewares=paneles-mgi-www-redirect"
+
+    - "traefik.http.middlewares.paneles-mgi-www-redirect.redirectregex.regex=^https?://www\\.mgipaneles\\.com\\.ar/(.*)"
+    - "traefik.http.middlewares.paneles-mgi-www-redirect.redirectregex.replacement=https://mgipaneles.com.ar/$$1"
+    - "traefik.http.middlewares.paneles-mgi-www-redirect.redirectregex.permanent=true"
 
 networks:
   root_default:

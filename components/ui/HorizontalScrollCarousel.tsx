@@ -17,19 +17,12 @@ export default function HorizontalScrollCarousel({
 }: HorizontalScrollCarouselProps) {
   return (
     <div className="relative">
-      <div
-        className="overflow-x-auto scrollbar-hide scroll-smooth pb-4"
-        style={{ scrollSnapType: 'x mandatory' }}
-      >
+      <div className="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4">
         <div className="flex gap-6 lg:gap-8">
           {items.map((item, index) => (
             <div
               key={index}
-              className="group flex-shrink-0 overflow-hidden rounded-xl bg-white shadow-md transition-shadow hover:shadow-lg"
-              style={{
-                width: 'min(90vw, 320px)',
-                scrollSnapAlign: 'start',
-              }}
+              className="group w-[min(90vw,320px)] flex-shrink-0 snap-start overflow-hidden rounded-xl bg-white shadow-md transition-shadow hover:shadow-lg"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
                 {item.image.endsWith('.svg') ? (
