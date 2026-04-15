@@ -33,10 +33,13 @@ export default function ImageSlider({ images, className = '' }: ImageSliderProps
       {/* Main Image */}
       <div className="relative h-96 w-full overflow-hidden rounded-xl bg-gray-200">
         {images[currentIndex].src.endsWith('.svg') ? (
-          <img
+          <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+            unoptimized
           />
         ) : (
           <Image
@@ -98,10 +101,13 @@ export default function ImageSlider({ images, className = '' }: ImageSliderProps
               aria-label={`Ver imagen ${index + 1}`}
             >
               {image.src.endsWith('.svg') ? (
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                  unoptimized
                 />
               ) : (
                 <Image

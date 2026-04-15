@@ -26,11 +26,13 @@ export default function HorizontalScrollCarousel({
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
                 {item.image.endsWith('.svg') ? (
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.alt}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 90vw, 320px"
+                    unoptimized
                   />
                 ) : (
                   <Image

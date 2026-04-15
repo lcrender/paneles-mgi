@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros.',
     images: [
       {
-        url: '/images/MGI-Paneles.png',
+        url: '/images/MGI-Paneles.webp',
         width: 1200,
         height: 630,
         alt: 'Paneles Sándwich MGI',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Paneles Sándwich MGI - Aislación Térmica y Construcción Industrial',
     description: 'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros.',
-    images: ['/images/MGI-Paneles.png'],
+    images: ['/images/MGI-Paneles.webp'],
   },
   robots: {
     index: true,

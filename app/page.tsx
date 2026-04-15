@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         title="Paneles Sándwich para Construcción Industrial"
-        rightImage="/images/iso-mgi-paneles.png"
+        rightImage="/images/iso-mgi-paneles.webp"
         rightImageAlt="Paneles sándwich MGI"
         description={
           <>

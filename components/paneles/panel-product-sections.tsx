@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 /** Separador horizontal entre bloques de línea de producto (mismo patrón que usos/techos). */
 export function PanelProductSectionDivider() {
@@ -61,11 +62,13 @@ export function PanelFrigorificoSection({
 
           <div className="relative">
             <div className="overflow-hidden rounded-xl bg-gray-100 shadow-lg">
-              <img
-                src="/images/panel-frigorifico-camara.jpg"
+              <Image
+                src="/images/panel-frigorifico-camara.webp"
                 alt="Panel frigorífico para cámara"
+                width={1600}
+                height={1000}
                 className="block h-auto w-full"
-                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -171,11 +174,13 @@ export function PanelTrapezoidalSection({
 
           <div className="relative">
             <div className="overflow-hidden rounded-xl bg-gray-100 shadow-lg">
-              <img
-                src="/images/panel-trapezoidal-para-techo-negro.jpg"
+              <Image
+                src="/images/panel-trapezoidal-para-techo-negro.webp"
                 alt="Panel trapezoidal para techo negro"
+                width={1600}
+                height={1000}
                 className="block h-auto w-full"
-                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -195,11 +200,13 @@ export function PanelTrapezoidalSection({
 
             <div className="text-gray-700 lg:text-right">
               <p className="mb-3 text-lg font-semibold text-gray-900">Colores disponibles:</p>
-              <img
-                src="/images/colores-trapezoidal.jpg"
+              <Image
+                src="/images/colores-trapezoidal.webp"
                 alt="Colores disponibles panel trapezoidal"
+                width={440}
+                height={220}
                 className="mx-auto h-auto w-full max-w-[220px] rounded-lg border border-gray-200 bg-white shadow-sm lg:ml-auto lg:mr-0"
-                loading="lazy"
+                sizes="220px"
               />
             </div>
           </div>
@@ -269,11 +276,13 @@ export function PanelMuroSection({ className = 'section-padding bg-white' }: { c
 
           <div className="relative">
             <div className="overflow-hidden rounded-xl bg-gray-100 shadow-lg">
-              <img
-                src="/images/panel-sandwich-muro.jpg"
+              <Image
+                src="/images/panel-sandwich-muro.webp"
                 alt="Panel sándwich muro"
+                width={1600}
+                height={1000}
                 className="block h-auto w-full"
-                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -292,11 +301,13 @@ export function PanelMuroSection({ className = 'section-padding bg-white' }: { c
 
             <div className="text-gray-700 lg:text-right">
               <p className="mb-3 text-lg font-semibold text-gray-900">Colores disponibles:</p>
-              <img
-                src="/images/colores-panel-muro.jpg"
+              <Image
+                src="/images/colores-panel-muro.webp"
                 alt="Colores disponibles panel muro"
+                width={440}
+                height={220}
                 className="mx-auto h-auto w-full max-w-[220px] rounded-lg border border-gray-200 bg-white shadow-sm lg:ml-auto lg:mr-0"
-                loading="lazy"
+                sizes="220px"
               />
             </div>
           </div>
@@ -381,11 +392,13 @@ export function PanelEcoTrapezoidalSection({
 
           <div className="relative">
             <div className="overflow-hidden rounded-xl bg-gray-100 shadow-lg">
-              <img
-                src="/images/panel-sandwich-eco-trapezoidal.jpg"
+              <Image
+                src="/images/panel-sandwich-eco-trapezoidal.webp"
                 alt="Panel sándwich ECO trapezoidal"
+                width={1600}
+                height={1000}
                 className="block h-auto w-full"
-                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

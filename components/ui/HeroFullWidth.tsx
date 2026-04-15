@@ -37,11 +37,14 @@ export default function HeroFullWidth({
       {/* Imagen de fondo full-width */}
       <div className="absolute inset-0">
         {image.endsWith('.svg') ? (
-          <img
+          <Image
             src={image}
             alt={imageAlt}
-            className="h-full w-full object-cover"
-            loading="eager"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            unoptimized
           />
         ) : (
           <Image

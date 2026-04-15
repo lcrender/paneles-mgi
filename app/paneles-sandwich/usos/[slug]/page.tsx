@@ -124,9 +124,9 @@ export default async function UsoPage({ params }: PageProps) {
         <Hero
           title={cfContent.hero.h1}
           description={heroDesc}
-          image="/images/hero-paneles.jpg"
+          image="/images/hero-paneles.webp"
           imageAlt="Paneles sándwich para cámaras frigoríficas"
-          rightImage="/images/mgi-paneles-para-camaras-frigorificas-hero.png"
+          rightImage="/images/mgi-paneles-para-camaras-frigorificas-hero.webp"
           rightImageAlt="Paneles para cámaras frigoríficas MGI"
           rightImageLarge
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
@@ -163,7 +163,7 @@ export default async function UsoPage({ params }: PageProps) {
         {/* Explicación Técnica */}
         <TwoColumnSection
           title={cfContent.explicacionTecnica.h2}
-          image="/images/usos/camaras-frigorificas/paneles-sandwich-para-camaras-frigorificas.jpg"
+          image="/images/usos/camaras-frigorificas/paneles-sandwich-para-camaras-frigorificas.webp"
           imageAlt="Paneles sándwich para cámaras frigoríficas"
           imagePosition="right"
           className="bg-gray-50"
@@ -404,9 +404,9 @@ export default async function UsoPage({ params }: PageProps) {
         <Hero
           title={congContent.hero.h1}
           description={heroDesc}
-          image="/images/hero-paneles.jpg"
+          image="/images/hero-paneles.webp"
           imageAlt="Paneles sándwich para cámaras de congelado"
-          rightImage="/images/mgi-camaras-para-congelado-hero.png"
+          rightImage="/images/mgi-camaras-para-congelado-hero.webp"
           rightImageAlt="Paneles para cámaras de congelado MGI"
           rightImageLarge
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
@@ -420,7 +420,7 @@ export default async function UsoPage({ params }: PageProps) {
         {/* Explicación Técnica - Imagen izquierda, texto derecha con contenedor */}
         <TwoColumnSection
           title={congContent.explicacionTecnica.h2}
-          image="/images/usos/camaras-frigorificas/paneles-sandwich-para-camaras-de-congelado.jpg"
+          image="/images/usos/camaras-frigorificas/paneles-sandwich-para-camaras-de-congelado.webp"
           imageAlt="Paneles sándwich para cámaras de congelado"
           imagePosition="left"
           className="bg-white"
@@ -627,7 +627,7 @@ export default async function UsoPage({ params }: PageProps) {
         <Hero
           title={navContent.hero.h1}
           description={heroDesc}
-          image="/images/usos/techos/paneles-para-techos.jpg"
+          image="/images/usos/techos/paneles-para-techos.webp"
           imageAlt="Paneles sándwich para naves industriales"
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
           secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
@@ -641,7 +641,7 @@ export default async function UsoPage({ params }: PageProps) {
 
         <TwoColumnSection
           title={navContent.explicacionTecnica.h2}
-          image="/images/usos/industriales/paneles-sandwich-para-naves-industriales.jpg"
+          image="/images/usos/industriales/paneles-sandwich-para-naves-industriales.webp"
           imageAlt="Paneles sándwich para naves industriales"
           imagePosition="right"
           className="bg-gray-50"
@@ -861,9 +861,9 @@ export default async function UsoPage({ params }: PageProps) {
         <Hero
           title={tecContent.hero.h1}
           description={heroDesc}
-          image="/images/usos/techos/paneles-para-techos.jpg"
+          image="/images/usos/techos/paneles-para-techos.webp"
           imageAlt="Paneles sándwich para techos"
-          rightImage="/images/panel-sandwich-trapezoidal-para-techo.png"
+          rightImage="/images/panel-sandwich-trapezoidal-para-techo.webp"
           rightImageAlt="Panel sándwich trapezoidal para techo"
           rightImageDesktopOnly
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
@@ -883,7 +883,7 @@ export default async function UsoPage({ params }: PageProps) {
 
         <TwoColumnSection
           title={tecContent.explicacionTecnica.h2}
-          image="/images/usos/techos/paneles-sandwich-para-techos.jpg"
+          image="/images/usos/techos/paneles-sandwich-para-techos.webp"
           imageAlt="Paneles sándwich para techos"
           imagePosition="right"
           className="bg-gray-50"
@@ -1091,9 +1091,9 @@ export default async function UsoPage({ params }: PageProps) {
         <Hero
           title={murContent.hero.h1}
           description={heroDesc}
-          image="/images/hero-paneles.jpg"
+          image="/images/hero-paneles.webp"
           imageAlt="Paneles sándwich para muros"
-          rightImage="/images/mgi-paneles-para-muro-hero.png"
+          rightImage="/images/mgi-paneles-para-muro-hero.webp"
           rightImageAlt="Paneles para muros MGI"
           rightImageLarge
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
@@ -1106,7 +1106,7 @@ export default async function UsoPage({ params }: PageProps) {
 
         <TwoColumnSection
           title={murContent.explicacionTecnica.h2}
-          image="/images/usos/muros/paneles-sandwich-para-muros.jpg"
+          image="/images/usos/muros/paneles-sandwich-para-muros.webp"
           imageAlt="Paneles sándwich para muros"
           imagePosition="right"
           className="bg-gray-50"
@@ -1295,7 +1295,7 @@ export default async function UsoPage({ params }: PageProps) {
         bullets={[]}
         primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
         secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
-        image={uso?.image || '/images/hero-paneles.jpg'}
+        image={uso?.image || '/images/hero-paneles.webp'}
         imageAlt={content.title}
       />
 

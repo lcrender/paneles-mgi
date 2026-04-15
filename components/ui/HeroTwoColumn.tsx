@@ -111,11 +111,14 @@ export default function HeroTwoColumn({
           <div className="relative order-first lg:order-last">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100">
               {image.endsWith('.svg') ? (
-                <img
+                <Image
                   src={image}
                   alt={imageAlt}
-                  className="h-full w-full object-cover"
-                  loading="eager"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  unoptimized
                 />
               ) : (
                 <Image

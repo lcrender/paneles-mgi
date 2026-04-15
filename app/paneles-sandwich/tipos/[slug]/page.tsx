@@ -81,7 +81,7 @@ export default async function TipoPage({ params }: PageProps) {
         ]}
         primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
         secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
-        image={tipo?.image || '/images/hero-paneles.jpg'}
+        image={tipo?.image || '/images/hero-paneles.webp'}
         imageAlt={content.title}
       />
 

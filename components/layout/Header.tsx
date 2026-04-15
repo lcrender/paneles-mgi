@@ -36,7 +36,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/mgi-paneles-logo.png"
+              src="/images/mgi-paneles-logo.webp"
               alt={SITE_CONFIG.name}
               width={288}
               height={96}

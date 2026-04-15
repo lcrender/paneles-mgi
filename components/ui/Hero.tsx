@@ -29,7 +29,7 @@ interface HeroProps {
 export default function Hero({
   title,
   description,
-  image = '/images/hero-paneles.jpg',
+  image = '/images/hero-paneles.webp',
   imageAlt = 'Paneles sándwich',
   rightImage,
   rightImageAlt = 'Paneles sándwich MGI',

@@ -34,7 +34,7 @@ export const PROYECTOS: Proyecto[] = [
       </>
     ),
     videoSrc: '/videos/paneles-para-camara-de-congelado-luccianos-low.mp4',
-    thumbnail: '/images/proyectos/luccianos.jpg',
+    thumbnail: '/images/proyectos/luccianos.webp',
     thumbnailAlt: 'Cámara de congelado Lucciano\'s - Paneles MGI',
   },
   {
@@ -57,7 +57,7 @@ export const PROYECTOS: Proyecto[] = [
       </>
     ),
     videoSrc: '/videos/paneles-para-camara-de-congelado-luccianos-low.mp4',
-    thumbnail: '/images/proyectos/luccianos.jpg',
+    thumbnail: '/images/proyectos/luccianos.webp',
     thumbnailAlt: 'Cámara de congelado Lucciano\'s - Paneles MGI',
   },
   {
@@ -80,7 +80,7 @@ export const PROYECTOS: Proyecto[] = [
       </>
     ),
     videoSrc: '/videos/paneles-para-camara-de-congelado-luccianos-low.mp4',
-    thumbnail: '/images/proyectos/luccianos.jpg',
+    thumbnail: '/images/proyectos/luccianos.webp',
     thumbnailAlt: 'Cámara de congelado Lucciano\'s - Paneles MGI',
   },
 ]
