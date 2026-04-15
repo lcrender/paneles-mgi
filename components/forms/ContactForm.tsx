@@ -1,6 +1,9 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import { pushDataLayer } from '@/lib/push-data-layer'
+
+const CONTACT_FORM_ID = 'contacto'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -28,13 +31,31 @@ export default function ContactForm() {
 
       if (!res.ok) {
         console.error('[contact]', data.error || res.statusText)
+        pushDataLayer({
+          event: 'contact_form_error',
+          form_id: CONTACT_FORM_ID,
+          page_location: window.location.href,
+          http_status: res.status,
+          error_message: typeof data.error === 'string' ? data.error : undefined,
+        })
         setSubmitStatus('error')
         return
       }
 
+      pushDataLayer({
+        event: 'contact_form_success',
+        form_id: CONTACT_FORM_ID,
+        page_location: window.location.href,
+      })
       setSubmitStatus('success')
       setFormData({ name: '', email: '', phone: '', message: '' })
     } catch {
+      pushDataLayer({
+        event: 'contact_form_error',
+        form_id: CONTACT_FORM_ID,
+        page_location: window.location.href,
+        error_type: 'network_or_client',
+      })
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
