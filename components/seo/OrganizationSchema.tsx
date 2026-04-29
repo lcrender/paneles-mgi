@@ -21,6 +21,7 @@ export default function OrganizationSchema() {
       addressRegion: SITE_CONFIG.address.province,
       addressCountry: SITE_CONFIG.address.country,
     },
+    hasMap: SITE_CONFIG.mapsUrl,
   }
 
   return (

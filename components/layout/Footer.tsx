@@ -34,6 +34,15 @@ export default function Footer() {
                 {SITE_CONFIG.address.city}, {SITE_CONFIG.address.province}
                 <br />
                 {SITE_CONFIG.address.country}
+                <br />
+                <a
+                  href={SITE_CONFIG.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-primary-400 hover:text-primary-300"
+                >
+                  Ver en Google Maps
+                </a>
               </p>
             </div>
           </div>

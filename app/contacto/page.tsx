@@ -54,6 +54,14 @@ export default function ContactPage() {
                       <br />
                       {SITE_CONFIG.address.country}
                     </p>
+                    <a
+                      href={SITE_CONFIG.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block text-primary-600 hover:text-primary-700"
+                    >
+                      Ver en Google Maps
+                    </a>
                   </div>
                   <div className="pt-4">
                     <a

@@ -7,12 +7,14 @@ export const SITE_CONFIG = {
   /** URL canónica del sitio (sitemap, OG, schema). Debe coincidir con el dominio público. */
   url: 'https://mgipaneles.com.ar',
   /** E.164 para tel: y schema.org */
-  phone: '+5491121662299',
-  phoneDisplay: '(+54 9) 11 2166-2299',
-  whatsapp: '+5491121662299',
+  phone: '+5491162046087',
+  phoneDisplay: '(+54 9) 11 6204-6087',
+  whatsapp: '+5491162046087',
+  /** Enlace a ubicación en Google Maps */
+  mapsUrl: 'https://maps.app.goo.gl/8kcNVz5h1m7Bkte28?g_st=iw',
   address: {
-    street: 'Presidente Perón 3773',
-    city: 'Haedo, El Palomar',
+    street: 'Cjal. Daniel García 878',
+    city: 'Buenos Aires',
     province: 'Buenos Aires',
     country: 'Argentina',
   },
