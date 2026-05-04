@@ -49,7 +49,7 @@ export const USOS = [
     id: 'techos',
     title: 'Paneles para Techos',
     slug: '/paneles-sandwich/usos/techos',
-    description: 'Cubiertas autoportantes con aislación térmica integrada, ideales para reducir transferencia térmica y condensación.',
+    description: 'Techos autoportantes con aislación térmica integrada, ideales para reducir transferencia térmica y condensación.',
     image: '/images/usos/techos.webp',
     homeImage: '/images/paneles-para-techos.webp',
   },

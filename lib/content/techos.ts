@@ -8,7 +8,7 @@ export const techosContent = {
     subtitle: '',
     secondaryLine:
       'En MGI Paneles ofrecemos sistemas de paneles sándwich para techos diseñados para lograr aislación térmica, resistencia estructural y rapidez de instalación en naves industriales, galpones, depósitos y construcciones comerciales.',
-    introBeforeBullets: 'Nuestros paneles de cubierta integran en una sola solución:',
+    introBeforeBullets: 'Nuestros paneles para techos integran en una sola solución:',
     bullets: [
       'Estructura autoportante',
       'Aislación térmica continua',
@@ -19,7 +19,7 @@ export const techosContent = {
   },
   explicacionTecnica: {
     h2: '¿Qué es un panel sándwich para techo?',
-    intro: 'Un panel sándwich para cubierta está compuesto por:',
+    intro: 'Un panel sándwich para techo está compuesto por:',
     composicion: [
       'Chapa exterior perfilada de alta resistencia',
       'Núcleo aislante térmico (PIR, EPS o Lana de Roca)',
@@ -29,7 +29,7 @@ export const techosContent = {
       'Este sistema permite reemplazar soluciones tradicionales como chapa simple + aislación suelta, ofreciendo mayor eficiencia y menor tiempo de obra.',
   },
   ventajas: {
-    h2: 'Ventajas de los Paneles Sándwich para Cubiertas',
+    h2: 'Ventajas de los Paneles Sándwich para Techos',
     cards: [
       {
         icon: '🔥',
@@ -76,12 +76,12 @@ export const techosContent = {
   },
   aplicaciones: {
     h2: 'Aplicaciones de Paneles para Techos',
-    intro: 'Nuestros paneles sándwich de cubierta se utilizan en:',
+    intro: 'Nuestros paneles sándwich para techos se utilizan en:',
     items: [
-      { emoji: '🏭', label: 'Naves industriales', description: 'Cubiertas aislantes para plantas productivas.' },
+      { emoji: '🏭', label: 'Naves industriales', description: 'Techos aislantes para plantas productivas.' },
       { emoji: '📦', label: 'Depósitos logísticos', description: 'Reducción de calor interior en grandes superficies.' },
       { emoji: '🏬', label: 'Galpones comerciales', description: 'Soluciones térmicas rápidas y eficientes.' },
-      { emoji: '🏢', label: 'Edificios industriales', description: 'Cubiertas con aislación incorporada.' },
+      { emoji: '🏢', label: 'Edificios industriales', description: 'Techos con aislación incorporada.' },
     ],
   },
   tiposPanel: {
@@ -129,7 +129,7 @@ export const techosContent = {
     asesoramiento: 'Nuestro equipo técnico te asesora según tu proyecto.',
   },
   ctaFinal: {
-    title: 'Construí tu Cubierta con Aislación Integrada',
+    title: 'Construí tus Techos con Aislación Integrada',
     description:
       'En MGI Paneles desarrollamos soluciones de panelería sándwich para techos industriales, combinando eficiencia térmica, rapidez de ejecución y durabilidad estructural.',
     cta1: { text: 'Solicitar cotización', href: '/contacto' },

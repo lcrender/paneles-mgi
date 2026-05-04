@@ -5,6 +5,10 @@ import { generateWhatsAppLink } from '@/lib/utils'
 export default function Footer() {
   const whatsappMessage = 'Hola, estoy interesado en paneles sándwich'
   const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
+  const cityProvince =
+    SITE_CONFIG.address.city === SITE_CONFIG.address.province
+      ? SITE_CONFIG.address.city
+      : `${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.province}`
 
   const currentYear = new Date().getFullYear()
 
@@ -31,7 +35,7 @@ export default function Footer() {
                 <br />
                 {SITE_CONFIG.address.street}
                 <br />
-                {SITE_CONFIG.address.city}, {SITE_CONFIG.address.province}
+                {cityProvince}
                 <br />
                 {SITE_CONFIG.address.country}
                 <br />
@@ -74,21 +78,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/paneles-sandwich/especificaciones"
-                  className="transition-colors hover:text-primary-400"
-                >
-                  Especificaciones
-                </Link>
-              </li>
-              <li>
                 <Link href="/proyectos" className="transition-colors hover:text-primary-400">
                   Proyectos
-                </Link>
-              </li>
-              <li>
-                <Link href="/nosotros" className="transition-colors hover:text-primary-400">
-                  Nosotros
                 </Link>
               </li>
               <li>
@@ -107,16 +98,6 @@ export default function Footer() {
                 <Link href="/contacto" className="transition-colors hover:text-primary-400">
                   Formulario de Contacto
                 </Link>
-              </li>
-              <li>
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-primary-400"
-                >
-                  WhatsApp
-                </a>
               </li>
             </ul>
             <div className="mt-6">

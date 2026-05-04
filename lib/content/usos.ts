@@ -178,7 +178,7 @@ export const usosContent = {
       {
         question: '¿Realizan instalación?',
         answer:
-          'Contamos con equipo técnico especializado para montaje de cubiertas industriales en todo el país.',
+          'Contamos con equipo técnico especializado para montaje de techos industriales en todo el país.',
       },
     ],
   },

@@ -140,7 +140,7 @@ export function PanelTrapezoidalSection({
     variant === 'naves' ? (
       <p>• Para construcciones industriales</p>
     ) : (
-      <p>• Para cubiertas y muros</p>
+      <p>• Para techos y muros</p>
     )
 
   return (
@@ -163,8 +163,17 @@ export function PanelTrapezoidalSection({
               o foil de aluminio blanco.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-gray-700">
-              Apto para cubiertas y cerramientos verticales en naves industriales, edificios comerciales y
-              residenciales.
+              {variant === 'naves' ? (
+                <>
+                  Apto para cubiertas y cerramientos verticales en naves industriales, edificios comerciales y
+                  residenciales.
+                </>
+              ) : (
+                <>
+                  Apto para techos y cerramientos verticales en naves industriales, edificios comerciales y
+                  residenciales.
+                </>
+              )}
             </p>
             <p className="mt-6 text-lg leading-relaxed text-gray-700">
               Núcleo PIR de alta eficiencia térmica (λ 0,022 W/m·K), con densidad media de 28 a 35 kg/m³ y
@@ -352,7 +361,7 @@ export function PanelMuroSection({ className = 'section-padding bg-white' }: { c
   )
 }
 
-export function PanelEcoTrapezoidalSection({
+export function PanelIsoluzSection({
   id,
   className = 'section-padding bg-white',
 }: {
@@ -365,12 +374,119 @@ export function PanelEcoTrapezoidalSection({
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
           <div>
             <h2 className="mb-6 inline-block border-b-2 border-gray-300 pb-2 text-2xl font-semibold text-gray-900 sm:text-3xl">
+              Panel ISOLUZ: iluminación natural y ahorro energético
+            </h2>
+            <div className="space-y-4 text-lg leading-relaxed text-gray-700">
+              <p>• Solución translúcida de policarbonato multicapa para cubiertas</p>
+              <p>• Luz natural sin perder aislamiento térmico</p>
+              <p>• Ideal para galpones, depósitos y espacios comerciales</p>
+            </div>
+
+            <p className="mt-6 text-lg leading-relaxed text-gray-700">
+              El panel ISOLUZ es una solución translúcida de policarbonato multicapa diseñada para
+              cubiertas, que permite aprovechar la luz natural sin perder aislamiento térmico. Ideal para
+              galpones, depósitos y espacios comerciales que buscan eficiencia y confort.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+              <Image
+                src="/images/panel-isoluz.jpg"
+                alt="Panel ISOLUZ translúcido para cubiertas"
+                width={592}
+                height={459}
+                className="block h-auto w-full"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+
+        <hr className="my-10 border-gray-200" />
+
+        <div className="space-y-8">
+          <div>
+            <h3 className="mb-4 text-xl font-semibold text-gray-900 sm:text-2xl">Beneficios clave</h3>
+            <div className="grid gap-3 text-center text-gray-700 sm:grid-cols-2 lg:grid-cols-5">
+              <p className="flex min-h-[88px] items-center justify-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+                Reduce el consumo eléctrico
+              </p>
+              <p className="flex min-h-[88px] items-center justify-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+                Excelente aislamiento térmico
+              </p>
+              <p className="flex min-h-[88px] items-center justify-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+                Alta transmisión de luz (hasta 56%)
+              </p>
+              <p className="flex min-h-[88px] items-center justify-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+                Protección UV y gran durabilidad
+              </p>
+              <p className="flex min-h-[88px] items-center justify-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 sm:col-span-2 lg:col-span-1">
+                Fácil instalación en techos de 50 y 70 mm
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-xl border-2 border-primary-200 bg-primary-50/50 p-6 sm:p-8">
+            <h3 className="mb-4 text-xl font-bold text-gray-900 sm:text-2xl">Especificaciones principales</h3>
+            <ul className="list-inside list-disc space-y-2 text-lg text-gray-700">
+              <li>Espesor: 30 mm</li>
+              <li>Ancho útil: 1000 mm</li>
+              <li>Longitud máxima: 11,8 m</li>
+              <li>Vano entre apoyos: hasta 1750 mm</li>
+            </ul>
+          </div>
+
+          <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
+            <h3 className="mb-3 text-xl font-semibold text-gray-900 sm:text-2xl">
+              Incorporá luz natural a tus proyectos
+            </h3>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Mejorá la eficiencia energética y el confort de tus espacios con ISOLUZ.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Link href="/contacto" className="btn-primary">
+              Solicitar presupuesto
+            </Link>
+            <a
+              href="/pdfs/panel-isoluz-ficha-tecnica.pdf"
+              className="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Descargá ficha técnica
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function PanelEcoTrapezoidalSection({
+  id,
+  className = 'section-padding bg-white',
+  /** En la página de techos usamos “techos” en lugar de “cubiertas”. */
+  useTechosWording = false,
+}: {
+  id?: string
+  className?: string
+  useTechosWording?: boolean
+}) {
+  return (
+    <section id={id} className={className}>
+      <div className="container-custom">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div>
+            <h2 className="mb-6 inline-block border-b-2 border-gray-300 pb-2 text-2xl font-semibold text-gray-900 sm:text-3xl">
               Paneles ECO Trapezoidales
             </h2>
             <div className="space-y-4 text-lg leading-relaxed text-gray-700">
               <p>• Paneles aislantes trapezoidales económicos</p>
               <p>• Núcleo PIR (Poliisocianurato)</p>
-              <p>• Soluciones para cubiertas y muros</p>
+              <p>• Soluciones para {useTechosWording ? 'techos' : 'cubiertas'} y muros</p>
             </div>
 
             <p className="mt-6 text-lg leading-relaxed text-gray-700">
@@ -421,7 +537,7 @@ export function PanelEcoTrapezoidalSection({
               Sistema de encastre lateral.
             </p>
             <p className="flex min-h-[88px] items-center justify-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
-              Apto para cubiertas y cerramientos.
+              Apto para {useTechosWording ? 'techos' : 'cubiertas'} y cerramientos.
             </p>
           </div>
 

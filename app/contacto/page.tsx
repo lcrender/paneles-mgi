@@ -13,6 +13,11 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
+  const cityProvince =
+    SITE_CONFIG.address.city === SITE_CONFIG.address.province
+      ? SITE_CONFIG.address.city
+      : `${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.province}`
+
   const whatsappLink = generateWhatsAppLink(
     SITE_CONFIG.whatsapp,
     'Hola, estoy interesado en paneles sándwich y quisiera solicitar una cotización'
@@ -50,7 +55,7 @@ export default function ContactPage() {
                     <p className="text-gray-600">
                       {SITE_CONFIG.address.street}
                       <br />
-                      {SITE_CONFIG.address.city}, {SITE_CONFIG.address.province}
+                      {cityProvince}
                       <br />
                       {SITE_CONFIG.address.country}
                     </p>

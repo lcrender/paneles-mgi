@@ -19,6 +19,7 @@ import { generateWhatsAppLink } from '@/lib/utils'
 import {
   PanelEcoTrapezoidalSection,
   PanelFrigorificoSection,
+  PanelIsoluzSection,
   PanelMuroSection,
   PanelProductSectionDivider,
   PanelProductSectionDividerLight,
@@ -879,7 +880,11 @@ export default async function UsoPage({ params }: PageProps) {
         <PanelEcoTrapezoidalSection
           id="panel-eco-trapezoidal"
           className="section-padding scroll-mt-24 bg-white"
+          useTechosWording
         />
+
+        <PanelProductSectionDivider />
+        <PanelIsoluzSection id="panel-isoluz" className="section-padding scroll-mt-24 bg-white" />
 
         <TwoColumnSection
           title={tecContent.explicacionTecnica.h2}
