@@ -13,17 +13,6 @@ export interface Proyecto {
   thumbnailAlt: string
 }
 
-const mgZeroLink = (
-  <a
-    href="https://mgzerosrl.com.ar"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-primary-600 hover:text-primary-700 underline"
-  >
-    MG Zero Ingeniería
-  </a>
-)
-
 export const PROYECTOS: Proyecto[] = [
   {
     id: 'camara-congelado-luccianos',
@@ -32,16 +21,7 @@ export const PROYECTOS: Proyecto[] = [
       <>
         Proyecto ejecutado para Lucciano&apos;s
         <br />
-        Soluciones de aislación para frío extremo por{' '}
-        <a
-          href="https://mgzerosrl.com.ar"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary-600 hover:text-primary-700 underline"
-        >
-          MG Zero
-        </a>
-        .
+        Soluciones de aislación para frío extremo con ingeniería especializada.
       </>
     ),
     videoSrc: '/videos/paneles-para-camara-frigorifica-de-helados-Luccianos-l.mp4',
@@ -57,8 +37,8 @@ export const PROYECTOS: Proyecto[] = [
           Proyecto ejecutado para la conservación óptima de productos sensibles como el chocolate.
         </p>
         <p>
-          Soluciones de aislación térmica con paneles MGI de alta precisión, desarrolladas por {mgZeroLink},
-          garantizando control de temperatura y máxima eficiencia energética.
+          Soluciones de aislación térmica con paneles MGI de alta precisión, garantizando control de
+          temperatura y máxima eficiencia energética.
         </p>
       </>
     ),
@@ -73,8 +53,8 @@ export const PROYECTOS: Proyecto[] = [
       <>
         <p className="mb-3">Proyecto orientado a la conservación de productos frescos en condiciones controladas.</p>
         <p>
-          Implementación de paneles sándwich MGI de alto rendimiento por {mgZeroLink}, asegurando aislamiento
-          térmico, durabilidad y eficiencia en almacenamiento hortícola.
+          Implementación de paneles sándwich MGI de alto rendimiento, asegurando aislamiento térmico,
+          durabilidad y eficiencia en almacenamiento hortícola.
         </p>
       </>
     ),
