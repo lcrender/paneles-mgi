@@ -13,10 +13,15 @@ export const SITE_CONFIG = {
   /** Enlace a ubicación en Google Maps */
   mapsUrl: 'https://maps.app.goo.gl/8kcNVz5h1m7Bkte28?g_st=iw',
   address: {
-    street: 'Cjal. Daniel García 878',
-    city: 'Buenos Aires',
+    street: 'Cacique Coliqueo 1041',
+    city: 'El Palomar',
     province: 'Buenos Aires',
     country: 'Argentina',
+  },
+  /** Flags temporales para ocultar vías de contacto sin borrar código */
+  contactVisibility: {
+    showPhone: false,
+    showWhatsApp: true,
   },
 } as const
 

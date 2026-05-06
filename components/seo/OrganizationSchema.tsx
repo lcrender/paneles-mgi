@@ -1,19 +1,24 @@
 import { SITE_CONFIG } from '@/lib/constants'
 
 export default function OrganizationSchema() {
+  const { showPhone } = SITE_CONFIG.contactVisibility
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
     logo: `${SITE_CONFIG.url}/images/mgi-paneles-logo.webp`,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: SITE_CONFIG.phone,
-      contactType: 'customer service',
-      areaServed: 'AR',
-      availableLanguage: 'Spanish',
-    },
+    ...(showPhone
+      ? {
+          contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: SITE_CONFIG.phone,
+            contactType: 'customer service',
+            areaServed: 'AR',
+            availableLanguage: 'Spanish',
+          },
+        }
+      : {}),
     address: {
       '@type': 'PostalAddress',
       streetAddress: SITE_CONFIG.address.street,

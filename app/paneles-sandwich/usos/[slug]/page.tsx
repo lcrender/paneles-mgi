@@ -88,6 +88,7 @@ export default async function UsoPage({ params }: PageProps) {
   }
 
   const uso = USOS.find((u) => u.id === slug)
+  const showWhatsApp = SITE_CONFIG.contactVisibility.showWhatsApp
   const whatsappMessage =
     slug === 'congelados'
       ? 'Hola, estoy interesado en paneles sándwich para cámaras de congelado'
@@ -131,7 +132,7 @@ export default async function UsoPage({ params }: PageProps) {
           rightImageAlt="Paneles para cámaras frigoríficas MGI"
           rightImageLarge
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-          secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+          secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         />
 
         {/* Sistemas de Paneles Frigoríficos */}
@@ -411,7 +412,7 @@ export default async function UsoPage({ params }: PageProps) {
           rightImageAlt="Paneles para cámaras de congelado MGI"
           rightImageLarge
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-          secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+          secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         />
 
         <PanelFrigorificoSection />
@@ -631,7 +632,7 @@ export default async function UsoPage({ params }: PageProps) {
           image="/images/usos/techos/paneles-para-techos.webp"
           imageAlt="Paneles sándwich para naves industriales"
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-          secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+          secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         />
 
         <PanelTrapezoidalSection variant="naves" />
@@ -868,7 +869,7 @@ export default async function UsoPage({ params }: PageProps) {
           rightImageAlt="Panel sándwich trapezoidal para techo"
           rightImageDesktopOnly
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-          secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+          secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         />
 
         <PanelTrapezoidalSection
@@ -1036,15 +1037,15 @@ export default async function UsoPage({ params }: PageProps) {
               <Link href={tecContent.ctaFinal.cta1.href} className="btn-primary">
                 📲 {tecContent.ctaFinal.cta1.text}
               </Link>
-              {tecContent.ctaFinal.cta2.href === 'whatsapp' ? (
+              {showWhatsApp && tecContent.ctaFinal.cta2.href === 'whatsapp' ? (
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
                   📲 {tecContent.ctaFinal.cta2.text}
                 </a>
-              ) : (
+              ) : tecContent.ctaFinal.cta2.href !== 'whatsapp' ? (
                 <Link href={tecContent.ctaFinal.cta2.href} className="btn-secondary">
                   📲 {tecContent.ctaFinal.cta2.text}
                 </Link>
-              )}
+              ) : null}
             </div>
           </div>
         </section>
@@ -1102,7 +1103,7 @@ export default async function UsoPage({ params }: PageProps) {
           rightImageAlt="Paneles para muros MGI"
           rightImageLarge
           primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-          secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+          secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         />
 
         <PanelMuroSection />
@@ -1257,15 +1258,15 @@ export default async function UsoPage({ params }: PageProps) {
               <Link href={murContent.ctaFinal.cta1.href} className="btn-primary">
                 📲 {murContent.ctaFinal.cta1.text}
               </Link>
-              {murContent.ctaFinal.cta2.href === 'whatsapp' ? (
+              {showWhatsApp && murContent.ctaFinal.cta2.href === 'whatsapp' ? (
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
                   📲 {murContent.ctaFinal.cta2.text}
                 </a>
-              ) : (
+              ) : murContent.ctaFinal.cta2.href !== 'whatsapp' ? (
                 <Link href={murContent.ctaFinal.cta2.href} className="btn-secondary">
                   📲 {murContent.ctaFinal.cta2.text}
                 </Link>
-              )}
+              ) : null}
             </div>
           </div>
         </section>
@@ -1299,7 +1300,7 @@ export default async function UsoPage({ params }: PageProps) {
         subtitle={content.description}
         bullets={[]}
         primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-        secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+        secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         image={uso?.image || '/images/hero-paneles.webp'}
         imageAlt={content.title}
       />

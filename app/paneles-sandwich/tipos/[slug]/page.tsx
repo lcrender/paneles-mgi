@@ -60,6 +60,7 @@ export default async function TipoPage({ params }: PageProps) {
   }
 
   const tipo = TIPOS.find((t) => t.id === slug)
+  const showWhatsApp = SITE_CONFIG.contactVisibility.showWhatsApp
   const whatsappMessage = `Hola, estoy interesado en paneles ${tipo?.title}`
   const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
 
@@ -80,7 +81,7 @@ export default async function TipoPage({ params }: PageProps) {
           'Ideal para aplicaciones estándar y comerciales',
         ]}
         primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
-        secondaryCta={{ text: 'WhatsApp', href: whatsappLink }}
+        secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         image={tipo?.image || '/images/hero-paneles.webp'}
         imageAlt={content.title}
       />

@@ -43,10 +43,12 @@ export default function Hero({
     href: '/contacto',
   }
 
-  const defaultSecondaryCta = {
-    text: 'WhatsApp',
-    href: generateWhatsAppLink(SITE_CONFIG.whatsapp, 'Hola, estoy interesado en paneles sándwich'),
-  }
+  const defaultSecondaryCta = SITE_CONFIG.contactVisibility.showWhatsApp
+    ? {
+        text: 'WhatsApp',
+        href: generateWhatsAppLink(SITE_CONFIG.whatsapp, 'Hola, estoy interesado en paneles sándwich'),
+      }
+    : undefined
 
   const cta1 = primaryCta || defaultPrimaryCta
   const cta2 = secondaryCta || defaultSecondaryCta
@@ -110,20 +112,21 @@ export default function Hero({
                 </Link>
               )}
 
-              {cta2.href.startsWith('http') ? (
-                <a
-                  href={cta2.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp"
-                >
-                  {cta2.text}
-                </a>
-              ) : (
-                <Link href={cta2.href} className="btn-whatsapp">
-                  {cta2.text}
-                </Link>
-              )}
+              {cta2 &&
+                (cta2.href.startsWith('http') ? (
+                  <a
+                    href={cta2.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-whatsapp"
+                  >
+                    {cta2.text}
+                  </a>
+                ) : (
+                  <Link href={cta2.href} className="btn-whatsapp">
+                    {cta2.text}
+                  </Link>
+                ))}
             </div>
           </div>
 

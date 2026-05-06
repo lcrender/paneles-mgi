@@ -28,10 +28,12 @@ export default function CTA({
     href: '/contacto',
   }
 
-  const defaultSecondaryButton = {
-    text: 'WhatsApp',
-    href: generateWhatsAppLink(SITE_CONFIG.whatsapp, 'Hola, estoy interesado en paneles sándwich'),
-  }
+  const defaultSecondaryButton = SITE_CONFIG.contactVisibility.showWhatsApp
+    ? {
+        text: 'WhatsApp',
+        href: generateWhatsAppLink(SITE_CONFIG.whatsapp, 'Hola, estoy interesado en paneles sándwich'),
+      }
+    : undefined
 
   const primary = primaryButton || defaultPrimaryButton
   const secondary = secondaryButton || defaultSecondaryButton
@@ -62,20 +64,21 @@ export default function CTA({
               </Link>
             )}
 
-            {secondary.href.startsWith('http') ? (
-              <a
-                href={secondary.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp"
-              >
-                {secondary.text}
-              </a>
-            ) : (
-              <Link href={secondary.href} className="btn-whatsapp">
-                {secondary.text}
-              </Link>
-            )}
+            {secondary &&
+              (secondary.href.startsWith('http') ? (
+                <a
+                  href={secondary.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp"
+                >
+                  {secondary.text}
+                </a>
+              ) : (
+                <Link href={secondary.href} className="btn-whatsapp">
+                  {secondary.text}
+                </Link>
+              ))}
           </div>
         </div>
       </div>

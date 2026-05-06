@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { SITE_CONFIG } from '@/lib/constants'
-import { generateWhatsAppLink } from '@/lib/utils'
 
 interface HeroTwoColumnProps {
   h1: string
@@ -16,7 +14,7 @@ interface HeroTwoColumnProps {
     text: string
     href: string
   }
-  secondaryCta: {
+  secondaryCta?: {
     text: string
     href: string
   }
@@ -90,20 +88,21 @@ export default function HeroTwoColumn({
                   {primaryCta.text}
                 </Link>
               )}
-              {secondaryCta.href.startsWith('http') ? (
-                <a
-                  href={secondaryCta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp"
-                >
-                  {secondaryCta.text}
-                </a>
-              ) : (
-                <Link href={secondaryCta.href} className="btn-whatsapp">
-                  {secondaryCta.text}
-                </Link>
-              )}
+              {secondaryCta &&
+                (secondaryCta.href.startsWith('http') ? (
+                  <a
+                    href={secondaryCta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-whatsapp"
+                  >
+                    {secondaryCta.text}
+                  </a>
+                ) : (
+                  <Link href={secondaryCta.href} className="btn-whatsapp">
+                    {secondaryCta.text}
+                  </Link>
+                ))}
             </div>
           </div>
 

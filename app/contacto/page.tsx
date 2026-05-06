@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
+  const { showPhone, showWhatsApp } = SITE_CONFIG.contactVisibility
   const cityProvince =
     SITE_CONFIG.address.city === SITE_CONFIG.address.province
       ? SITE_CONFIG.address.city
@@ -41,15 +42,17 @@ export default function ContactPage() {
               <div>
                 <h2 className="mb-6 text-2xl font-semibold text-gray-900">Información de Contacto</h2>
                 <div className="space-y-4">
-                  <div>
-                    <h3 className="mb-2 font-semibold text-gray-900">Teléfono</h3>
-                    <a
-                      href={`tel:${SITE_CONFIG.phone}`}
-                      className="text-gray-600 hover:text-primary-600"
-                    >
-                      {SITE_CONFIG.phoneDisplay}
-                    </a>
-                  </div>
+                  {showPhone && (
+                    <div>
+                      <h3 className="mb-2 font-semibold text-gray-900">Teléfono</h3>
+                      <a
+                        href={`tel:${SITE_CONFIG.phone}`}
+                        className="text-gray-600 hover:text-primary-600"
+                      >
+                        {SITE_CONFIG.phoneDisplay}
+                      </a>
+                    </div>
+                  )}
                   <div>
                     <h3 className="mb-2 font-semibold text-gray-900">Dirección</h3>
                     <p className="text-gray-600">
@@ -59,25 +62,19 @@ export default function ContactPage() {
                       <br />
                       {SITE_CONFIG.address.country}
                     </p>
-                    <a
-                      href={SITE_CONFIG.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-2 inline-block text-primary-600 hover:text-primary-700"
-                    >
-                      Ver en Google Maps
-                    </a>
                   </div>
-                  <div className="pt-4">
-                    <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-whatsapp inline-block"
-                    >
-                      Contactar por WhatsApp
-                    </a>
-                  </div>
+                  {showWhatsApp && (
+                    <div className="pt-4">
+                      <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-whatsapp inline-block"
+                      >
+                        Contactar por WhatsApp
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
 

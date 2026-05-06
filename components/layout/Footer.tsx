@@ -5,6 +5,7 @@ import { generateWhatsAppLink } from '@/lib/utils'
 export default function Footer() {
   const whatsappMessage = 'Hola, estoy interesado en paneles sándwich'
   const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
+  const { showPhone, showWhatsApp } = SITE_CONFIG.contactVisibility
   const cityProvince =
     SITE_CONFIG.address.city === SITE_CONFIG.address.province
       ? SITE_CONFIG.address.city
@@ -24,12 +25,14 @@ export default function Footer() {
               cámaras frigoríficas y aislación térmica.
             </p>
             <div className="space-y-2 text-sm">
-              <p>
-                <strong>Teléfono:</strong>{' '}
-                <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-primary-400">
-                  {SITE_CONFIG.phoneDisplay}
-                </a>
-              </p>
+              {showPhone && (
+                <p>
+                  <strong>Teléfono:</strong>{' '}
+                  <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-primary-400">
+                    {SITE_CONFIG.phoneDisplay}
+                  </a>
+                </p>
+              )}
               <p>
                 <strong>Dirección:</strong>
                 <br />
@@ -38,15 +41,6 @@ export default function Footer() {
                 {cityProvince}
                 <br />
                 {SITE_CONFIG.address.country}
-                <br />
-                <a
-                  href={SITE_CONFIG.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-block text-primary-400 hover:text-primary-300"
-                >
-                  Ver en Google Maps
-                </a>
               </p>
             </div>
           </div>
@@ -100,16 +94,18 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <div className="mt-6">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp inline-block w-full text-center"
-              >
-                Solicitar Cotización
-              </a>
-            </div>
+            {showWhatsApp && (
+              <div className="mt-6">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp inline-block w-full text-center"
+                >
+                  Solicitar Cotización
+                </a>
+              </div>
+            )}
           </div>
         </div>
 

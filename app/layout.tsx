@@ -85,11 +85,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MQDR2G22');`,
           }}
         />
-        <Script
-          id="whatsapp-click-tracker"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function () {
+        {SITE_CONFIG.contactVisibility.showWhatsApp && (
+          <Script
+            id="whatsapp-click-tracker"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function () {
   var WA_REGEX = /(wa\\.me|api\\.whatsapp\\.com|whatsapp\\.com\\/send)/i;
   document.addEventListener('click', function (event) {
     var target = event.target;
@@ -108,8 +109,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   }, true);
 })();`,
-          }}
-        />
+            }}
+          />
+        )}
       </head>
       <body>
         <noscript>
@@ -124,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <WhatsAppFloat />
+        {SITE_CONFIG.contactVisibility.showWhatsApp && <WhatsAppFloat />}
       </body>
     </html>
   )
