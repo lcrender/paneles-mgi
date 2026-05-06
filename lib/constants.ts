@@ -20,7 +20,7 @@ export const SITE_CONFIG = {
   },
   /** Flags temporales para ocultar vías de contacto sin borrar código */
   contactVisibility: {
-    showPhone: false,
+    showPhone: true,
     showWhatsApp: true,
   },
 } as const
