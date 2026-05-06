@@ -14,10 +14,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const { showPhone, showWhatsApp } = SITE_CONFIG.contactVisibility
+  const city = String(SITE_CONFIG.address.city)
+  const province = String(SITE_CONFIG.address.province)
   const cityProvince =
-    SITE_CONFIG.address.city === SITE_CONFIG.address.province
-      ? SITE_CONFIG.address.city
-      : `${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.province}`
+    city === province
+      ? city
+      : `${city}, ${province}`
 
   const whatsappLink = generateWhatsAppLink(
     SITE_CONFIG.whatsapp,

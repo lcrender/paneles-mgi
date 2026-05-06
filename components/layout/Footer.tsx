@@ -6,10 +6,12 @@ export default function Footer() {
   const whatsappMessage = 'Hola, estoy interesado en paneles sándwich'
   const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
   const { showPhone, showWhatsApp } = SITE_CONFIG.contactVisibility
+  const city = String(SITE_CONFIG.address.city)
+  const province = String(SITE_CONFIG.address.province)
   const cityProvince =
-    SITE_CONFIG.address.city === SITE_CONFIG.address.province
-      ? SITE_CONFIG.address.city
-      : `${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.province}`
+    city === province
+      ? city
+      : `${city}, ${province}`
 
   const currentYear = new Date().getFullYear()
 
