@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   keywords: ['paneles sándwich', 'paneles frigoríficos', 'aislación térmica', 'cámaras frigoríficas', 'naves industriales'],
   authors: [{ name: 'Paneles MGI' }],
   creator: 'Paneles MGI',
+  icons: {
+    icon: [{ url: '/images/favicon.png', type: 'image/png' }],
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'es_AR',

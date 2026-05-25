@@ -7,7 +7,7 @@ export default function OrganizationSchema() {
     '@type': 'Organization',
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/images/mgi-paneles-logo.webp`,
+    logo: `${SITE_CONFIG.url}/images/mgi-paneles-logo-web.jpg`,
     ...(showPhone
       ? {
           contactPoint: {

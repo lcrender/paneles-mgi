@@ -7,6 +7,7 @@ import { generateWhatsAppLink } from '@/lib/utils'
 interface HeroProps {
   title: string
   description: string | ReactNode
+  /** Imagen de fondo opcional; si se omite, se usa un gradiente oscuro */
   image?: string
   imageAlt?: string
   /** Imagen destacada a la derecha (desktop) o arriba (móvil), ej. render o ilustración */
@@ -29,7 +30,7 @@ interface HeroProps {
 export default function Hero({
   title,
   description,
-  image = '/images/hero-paneles.webp',
+  image,
   imageAlt = 'Paneles sándwich',
   rightImage,
   rightImageAlt = 'Paneles sándwich MGI',
@@ -56,15 +57,27 @@ export default function Hero({
   return (
     <section className="relative overflow-x-clip bg-gray-900">
       <div className="absolute inset-0">
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          className="object-cover opacity-50"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent" />
+        {image ? (
+          <>
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              className="object-cover opacity-50"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent" />
+          </>
+        ) : (
+          <div
+            className={
+              rightImage
+                ? 'absolute inset-0 bg-gradient-to-b from-gray-500 via-gray-900 to-gray-950 lg:bg-gradient-to-r lg:from-gray-950 lg:via-gray-900 lg:to-gray-500'
+                : 'absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800'
+            }
+            aria-hidden
+          />
+        )}
       </div>
 
       <div className="relative container-custom section-padding">
@@ -151,11 +164,12 @@ export default function Hero({
                   alt={rightImageAlt}
                   fill
                   className={rightImageLarge ? 'object-contain scale-[1.12]' : 'object-contain'}
-                  priority
+                  loading="lazy"
+                  quality={70}
                   sizes={
                     rightImageLarge
-                      ? '(max-width: 1023px) 100vw, min(48vw, 768px)'
-                      : '(max-width: 1023px) 100vw,  min(28vw, 420px)'
+                      ? '(max-width: 1023px) min(100vw, 520px), min(48vw, 768px)'
+                      : '(max-width: 1023px) min(100vw, 480px), min(28vw, 420px)'
                   }
                 />
               </div>
