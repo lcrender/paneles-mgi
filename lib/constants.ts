@@ -11,10 +11,11 @@ export const SITE_CONFIG = {
   phoneDisplay: '(+54 9) 11 6204-6087',
   whatsapp: '+5491162046087',
   /** Enlace a ubicación en Google Maps */
-  mapsUrl: 'https://maps.app.goo.gl/8kcNVz5h1m7Bkte28?g_st=iw',
+  mapsUrl:
+    'https://www.google.com/maps/place/MGI+Paneles+Sandwich+para+construcci%C3%B3n+-+C%C3%A1maras+Frigor%C3%ADficas+-+Muros+-+Techos/@-34.6336399,-58.6248014,16z/data=!4m10!1m2!2m1!1sPresidente+Peron+3773,+haedo!3m6!1s0x95bcb9827aad8bd1:0x7c7f0b2e662bb795!8m2!3d-34.6336399!4d-58.6152742!15sChxQcmVzaWRlbnRlIFBlcm9uIDM3NzMsIGhhZWRvkgEYYnVpbGRpbmdfbWF0ZXJpYWxzX3N0b3Jl4AEA!16s%2Fg%2F11nk352cxj?hl=es-ES&entry=ttu',
   address: {
-    street: 'Cacique Coliqueo 1041',
-    city: 'El Palomar',
+    street: 'Presidente Perón 3773',
+    city: 'Haedo, El Palomar',
     province: 'Buenos Aires',
     country: 'Argentina',
   },
