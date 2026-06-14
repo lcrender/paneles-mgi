@@ -38,11 +38,18 @@ export default function Footer() {
               <p>
                 <strong>Dirección:</strong>
                 <br />
-                {SITE_CONFIG.address.street}
-                <br />
-                {cityProvince}
-                <br />
-                {SITE_CONFIG.address.country}
+                <a
+                  href={SITE_CONFIG.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-400"
+                >
+                  {SITE_CONFIG.address.street}
+                  <br />
+                  {cityProvince}
+                  <br />
+                  {SITE_CONFIG.address.country}
+                </a>
               </p>
             </div>
           </div>

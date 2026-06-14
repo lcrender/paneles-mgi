@@ -57,13 +57,18 @@ export default function ContactPage() {
                   )}
                   <div>
                     <h3 className="mb-2 font-semibold text-gray-900">Dirección</h3>
-                    <p className="text-gray-600">
+                    <a
+                      href={SITE_CONFIG.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-600"
+                    >
                       {SITE_CONFIG.address.street}
                       <br />
                       {cityProvince}
                       <br />
                       {SITE_CONFIG.address.country}
-                    </p>
+                    </a>
                   </div>
                   {showWhatsApp && (
                     <div className="pt-4">
