@@ -1,20 +1,31 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import Hero from '@/components/ui/Hero'
 import Card from '@/components/ui/Card'
 import CTA from '@/components/ui/CTA'
 import FAQ from '@/components/ui/FAQ'
 import FAQSchema from '@/components/seo/FAQSchema'
 import ProjectCard from '@/components/ui/ProjectCard'
-import { BENEFICIOS, PROCESO_TRABAJO, USOS } from '@/lib/constants'
+import { BENEFICIOS, PROCESO_TRABAJO, SITE_CONFIG, USOS } from '@/lib/constants'
 import { PROYECTOS } from '@/lib/content/proyectos'
+import { generateWhatsAppLink } from '@/lib/utils'
 
-export const metadata = {
-  title: 'Paneles Sándwich para Construcción Industrial y Cámaras Frigoríficas',
+export const metadata: Metadata = {
+  // absolute: no aplica el template del layout ("| Paneles Sándwich MGI")
+  title: {
+    absolute: 'Precio Paneles Sándwich Cámaras Frigoríficas Techos y Paredes',
+  },
   description:
-    'Fabricación y venta de paneles sándwich para cámaras frigoríficas, naves industriales, techos y muros. Aislación térmica superior con entrega e instalación.',
+    'Paneles para cámaras frigoríficas: cotización, precios y asesoramiento. MGI Paneles Sándwich para techos y paredes en varios espesores. Envíos a toda Argentina.',
   alternates: {
     canonical: '/',
+  },
+  openGraph: {
+    title: 'Precio Paneles Sándwich Cámaras Frigoríficas Techos y Paredes',
+    description:
+      'Paneles para cámaras frigoríficas: cotización, precios y asesoramiento. MGI Paneles Sándwich para techos y paredes en varios espesores. Envíos a toda Argentina.',
+    type: 'website',
+    url: '/',
   },
 }
 
@@ -41,20 +52,40 @@ const homeFAQs = [
   },
 ]
 
+const USOS_PRIORITARIOS = USOS.filter(
+  (uso) => uso.id === 'camaras-frigorificas' || uso.id === 'congelados'
+)
+const USOS_SECUNDARIOS = USOS.filter(
+  (uso) => uso.id !== 'camaras-frigorificas' && uso.id !== 'congelados'
+)
+
 export default function HomePage() {
+  const showWhatsApp = SITE_CONFIG.contactVisibility.showWhatsApp
+  const whatsappLink = generateWhatsAppLink(
+    SITE_CONFIG.whatsapp,
+    'Hola, quiero cotizar paneles para cámaras frigoríficas'
+  )
+
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section — foco paneles para cámaras */}
       <Hero
-        title="Paneles Sándwich para Construcción Industrial"
-        rightImage="/images/iso-mgi-paneles.webp"
-        rightImageAlt="Paneles sándwich MGI"
+        title="Paneles para Cámaras Frigoríficas"
         description={
           <>
-            <p>Soluciones de aislación térmica de alto rendimiento para naves industriales, cámaras frigoríficas, techos y cerramientos.</p>
-            <p>📍 Comercialización y distribución en toda Argentina.</p>
+            <p>Fábrica de paneles para construir tu cámara frigorífica. Cotización, precio y asesoramiento técnico.</p>
+            <p>También para techos, muros y naves industriales.</p>
+            <p>Solicitá asesoramiento para tu proyecto: tenemos distintos tipos y espesores según la aplicación.</p>
+            <p>📍 Envíos a toda Argentina.</p>
           </>
         }
+        image="/images/hero-paneles.webp"
+        imageAlt="Paneles sándwich para cámaras frigoríficas"
+        rightImage="/images/mgi-paneles-para-camaras-frigorificas-hero.webp"
+        rightImageAlt="Paneles para cámaras frigoríficas MGI"
+        rightImageLarge
+        primaryCta={{ text: 'Cotizar', href: '/contacto' }}
+        secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
       />
 
       {/* Beneficios Section */}
@@ -79,29 +110,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Tipos de Panel Section */}
+      {/* Usos prioritarios: cámaras + congelado */}
       <section id="usos" className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Usos principales de nuestros paneles sándwich
+              Paneles para cámaras frigoríficas y de congelado
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Nuestros paneles sándwich están diseñados para adaptarse a diversas aplicaciones industriales y comerciales, permitiendo resolver necesidades de aislamiento, eficiencia energética y rápida instalación en diferentes entornos.
+              Nuestro foco: paneles sándwich para refrigeración y baja temperatura, con el espesor y núcleo adecuados a tu proyecto.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-            {USOS.map((uso) => (
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {USOS_PRIORITARIOS.map((uso) => (
               <Card
                 key={uso.id}
                 title={uso.title}
                 description={uso.description}
                 href={uso.slug}
-                image={(uso as { image: string; homeImage?: string }).homeImage ?? (uso as { image: string }).image}
+                image={uso.homeImage ?? uso.image}
                 imageAlt={uso.title.toLowerCase()}
-                imageHeight="h-64"
+                imageHeight="h-72"
               />
             ))}
+          </div>
+
+          {/* Usos secundarios */}
+          <div className="mt-16">
+            <div className="mb-8 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-gray-900 sm:text-3xl">
+                También para techos, muros y naves
+              </h3>
+              <p className="mx-auto max-w-2xl text-gray-600">
+                Además de cámaras, ofrecemos paneles sándwich para otras aplicaciones industriales y comerciales.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {USOS_SECUNDARIOS.map((uso) => (
+                <Card
+                  key={uso.id}
+                  title={uso.title}
+                  description={uso.description}
+                  href={uso.slug}
+                  image={uso.homeImage ?? uso.image}
+                  imageAlt={uso.title.toLowerCase()}
+                  imageHeight="h-48"
+                  className="bg-white"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -119,9 +176,7 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-10">
-            {/* 3 columnas en desktop */}
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              {/* PIR */}
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
                 <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900 sm:text-2xl">
                   <span aria-hidden>🔵</span> Paneles con Núcleo PIR
@@ -134,7 +189,6 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              {/* EPS */}
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
                 <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900 sm:text-2xl">
                   <span aria-hidden>🟢</span> Paneles con Núcleo EPS
@@ -146,7 +200,6 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              {/* Lana de Roca */}
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
                 <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900 sm:text-2xl">
                   <span aria-hidden>🔴</span> Paneles con Lana de Roca
@@ -160,7 +213,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Especificaciones Técnicas Generales - una columna */}
             <div className="rounded-xl border-2 border-primary-200 bg-primary-50/50 p-6 sm:p-8">
               <h3 className="mb-4 text-xl font-bold text-gray-900 sm:text-2xl">
                 Especificaciones Técnicas Generales
@@ -188,28 +240,18 @@ export default function HomePage() {
               Un proceso simple y eficiente desde la consulta hasta el servicio post venta
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
             {PROCESO_TRABAJO.map((paso) => (
               <div key={paso.step} className="relative flex">
                 <div className="group relative flex w-full flex-col">
                   <div className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    {/* Badge numérico en esquina superior derecha */}
                     <div className="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-bl-2xl rounded-tr-2xl bg-gradient-to-br from-primary-600 to-primary-700 text-sm font-bold text-white shadow-md">
                       {paso.step}
                     </div>
-                    
-                    {/* Icono grande */}
-                    <div className="mb-4 text-5xl">
-                      {paso.icon}
-                    </div>
-                    
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">
-                      {paso.title}
-                    </h3>
-                    <p className="mt-auto text-sm leading-relaxed text-gray-600">
-                      {paso.description}
-                    </p>
+                    <div className="mb-4 text-5xl">{paso.icon}</div>
+                    <h3 className="mb-2 text-lg font-bold text-gray-900">{paso.title}</h3>
+                    <p className="mt-auto text-sm leading-relaxed text-gray-600">{paso.description}</p>
                   </div>
                 </div>
               </div>
@@ -256,16 +298,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <FAQ items={homeFAQs} className="bg-gray-50" />
       <FAQSchema items={homeFAQs} />
 
-      {/* CTA Final Section */}
       <CTA
-        title="¿Listo para tu proyecto?"
-        description="Contactanos y recibe una cotización personalizada para tus paneles sándwich"
+        title="¿Necesitás paneles para tu cámara frigorífica?"
+        description="Contactanos y recibí una cotización personalizada. Envíos a toda Argentina."
       />
     </>
   )
 }
-

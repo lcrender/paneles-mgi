@@ -103,7 +103,7 @@ export default async function UsoPage({ params }: PageProps) {
           ? 'Hola, estoy interesado en paneles sándwich para techos'
           : slug === 'muros'
             ? 'Hola, estoy interesado en paneles sándwich para muros'
-            : 'Hola, estoy interesado en paneles sándwich para cámaras frigoríficas'
+            : 'Hola, quiero cotizar paneles para cámaras frigoríficas'
   const whatsappLink = generateWhatsAppLink(SITE_CONFIG.whatsapp, whatsappMessage)
 
   // Si es la página de cámaras frigoríficas, usar el contenido específico
@@ -136,7 +136,7 @@ export default async function UsoPage({ params }: PageProps) {
           rightImage="/images/mgi-paneles-para-camaras-frigorificas-hero.webp"
           rightImageAlt="Paneles para cámaras frigoríficas MGI"
           rightImageLarge
-          primaryCta={{ text: 'Pedir cotización', href: '/contacto' }}
+          primaryCta={{ text: 'Cotizar', href: '/contacto' }}
           secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
         />
 

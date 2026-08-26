@@ -5,17 +5,16 @@
 export const camarasFrigorificasContent = {
   hero: {
     h1: 'Paneles para Cámaras Frigoríficas',
-    subtitle:
-      'Máxima aislación térmica y hermeticidad garantizada para cámaras de refrigeración y congelado.',
+    subtitle: 'Fábrica de paneles para construir tu cámara frigorífica.',
     intro:
-      'Soluciones técnicas para construcción de cámaras de frío industriales y comerciales, con eficiencia energética y montaje rápido.',
+      'Máxima aislación térmica y hermeticidad para refrigeración y congelado. Cotización, precio y asesoramiento técnico.',
     bullets: [
       'Control térmico preciso',
       'Reducción del consumo eléctrico',
       'Superficies higiénicas y lavables',
       'Sistema de encastre hermético',
     ],
-    footerLine: 'Distribución en todo el país',
+    footerLine: 'Envíos a toda Argentina',
   },
   /** Sección inmediatamente debajo del hero: "Sistemas de Paneles Frigoríficos..." */
   seccionSistemas: {

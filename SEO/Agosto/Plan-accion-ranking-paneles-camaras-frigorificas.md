@@ -85,26 +85,37 @@ Publicado:
 - **Title (exacto, sin sufijo de marca):** `Precio paneles para cámaras frigoríficas Directo de Fábrica`
 - **Description (144 caracteres):** `Cotización precio de paneles para cámaras frigoríficas. Asesoramiento en espesores e instalación. Envíos a toda Argentina. Paneles Sándwich MGI.`
 
-### 1.2 Title y meta de la home
+### 1.2 Title y meta de la home ✅ aplicado
 
-Alinear home al objetivo comercial:
+**Archivo:** `app/page.tsx`
 
-- Priorizar *paneles para cámaras frigoríficas* + *fábrica de paneles* + *Argentina* (separados).
-- Mantener otros usos como secundarios en el copy, no en el title principal.
-- Misma regla: nunca “fabricación argentina” ni “distribuidores…”.
+Publicado:
 
-### 1.3 Snippet / hero de la pilar
+- **Title (61 caracteres):** `Precio Paneles Sándwich Cámaras Frigoríficas Techos y Paredes` — 1 sobre el soft limit ~60; Google puede truncar la última letra/palabra
+- **Description (160 caracteres):** `Paneles para cámaras frigoríficas: cotización, precios y asesoramiento. MGI Paneles Sándwich para techos y paredes en varios espesores. Envíos a toda Argentina.` — al límite desktop; en móvil puede recortar el final
 
-En above-the-fold:
+Nota: cámaras primero en description; techos/paredes secundarios. “Precio” en title de home.
 
-- Mensaje: **fábrica de paneles para construir tu cámara** (no “hacemos la cámara”; no “fabricamos en Argentina”).
-- CTA primario: Cotizar / WhatsApp con mensaje prearmado de paneles frigoríficos.
-- Línea visible: *Envíos a todo el país* / *a toda Argentina* + link secundario “¿Necesitás la cámara completa? → MGZERO”.
+### 1.3 Snippet / hero de la pilar ✅ aplicado
 
-### 1.4 Home: jerarquía visual
+En above-the-fold (página `/paneles-sandwich/usos/camaras-frigorificas`):
 
-- Hero orientado a paneles para cámaras (H1 + imagen de cámara/obra + CTA).
-- Usos: cámaras (y opcional congelado) destacados; techos/muros/naves secundarios.
+- Subtitle: **Fábrica de paneles para construir tu cámara frigorífica.**
+- Intro con cotización/precio/asesoramiento; bullets técnicos.
+- Línea: **Envíos a toda Argentina**
+- CTA: **Cotizar** + WhatsApp (`Hola, quiero cotizar paneles para cámaras frigoríficas`)
+- Link MGZERO en hero: **sacado** (a pedido)
+
+Archivos: `lib/content/camaras-frigorificas.ts`, `app/paneles-sandwich/usos/[slug]/page.tsx`
+
+### 1.4 Home: jerarquía visual ✅ aplicado
+
+- **Hero:** H1 `Paneles para Cámaras Frigoríficas`, copy “Fábrica de paneles para construir tu cámara…”, imagen de cámaras, CTA Cotizar + WhatsApp, envíos a toda Argentina.
+- **Usos prioritarios:** cámaras frigoríficas + congelado (tarjetas grandes).
+- **Usos secundarios:** techos, muros y naves (bloque aparte, más chico).
+- **CTA final:** orientado a paneles para cámara frigorífica.
+
+Archivo: `app/page.tsx`
 
 **Done when:** title/meta/home/hero publicados y verificados en preview + producción.
 
