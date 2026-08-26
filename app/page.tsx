@@ -128,7 +128,7 @@ export default function HomePage() {
                 title={uso.title}
                 description={uso.description}
                 href={uso.slug}
-                image={uso.homeImage ?? uso.image}
+                image={uso.homeImage}
                 imageAlt={uso.title.toLowerCase()}
                 imageHeight="h-72"
               />
@@ -152,7 +152,7 @@ export default function HomePage() {
                   title={uso.title}
                   description={uso.description}
                   href={uso.slug}
-                  image={uso.homeImage ?? uso.image}
+                  image={uso.homeImage}
                   imageAlt={uso.title.toLowerCase()}
                   imageHeight="h-48"
                   className="bg-white"
