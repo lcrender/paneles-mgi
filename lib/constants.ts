@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   whatsapp: '+5491162046087',
   /** Enlace a ubicación en Google Maps */
   mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Presidente+Per%C3%B3n+3773,+Haedo,+El+Palomar,+Buenos+Aires,+Argentina',
+    'https://www.google.com/maps/place/MGI+Paneles+Sandwich+para+construcci%C3%B3n+-+C%C3%A1maras+Frigor%C3%ADficas+-+Muros+-+Techos/@-34.6336354,-58.6201451,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb9827aad8bd1:0x7c7f0b2e662bb795!8m2!3d-34.6336399!4d-58.6152742!16s%2Fg%2F11nk352cxj?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D',
   address: {
     street: 'Presidente Perón 3773',
     city: 'Haedo, El Palomar',
