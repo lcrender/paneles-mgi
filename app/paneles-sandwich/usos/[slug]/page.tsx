@@ -49,15 +49,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   // Metadata específica para cámaras frigoríficas y congelados
-  let title: string = content.title
+  let title: Metadata['title'] = content.title
   let description: string = content.description
+  let openGraphTitle: string = content.title
 
   if (slug === 'camaras-frigorificas') {
-    title = 'Paneles sándwich para cámaras frigoríficas'
+    // absolute: no aplica el template del layout ("| Paneles Sándwich MGI")
+    const pageTitle = 'Precio paneles para cámaras frigoríficas Directo de Fábrica'
+    title = { absolute: pageTitle }
+    openGraphTitle = pageTitle
     description =
-      'Soluciones de aislación térmica para cámaras de refrigeración: mayor eficiencia energética, hermeticidad y durabilidad. Fabricación a medida y asesoramiento técnico para tu proyecto.'
+      'Cotización precio de paneles para cámaras frigoríficas. Asesoramiento en espesores e instalación. Envíos a toda Argentina. Paneles Sándwich MGI.'
   } else if (slug === 'congelados') {
     title = 'Paneles sándwich para cámaras de congelado'
+    openGraphTitle = title
     description =
       'Soluciones de aislación térmica para baja temperatura: mayor eficiencia energética, hermeticidad y durabilidad en cámaras de congelado. Fabricación a medida y asesoramiento técnico.'
   }
@@ -71,7 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `${SITE_CONFIG.url}${canonicalPath}`,
     },
     openGraph: {
-      title,
+      title: openGraphTitle,
       description,
       type: 'website',
       url: `${SITE_CONFIG.url}${canonicalPath}`,
