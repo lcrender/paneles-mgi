@@ -133,5 +133,10 @@ export const camarasFrigorificasContent = {
       ],
     },
   },
+  camaraProductoLink: {
+    text: 'Si necesitás la cámara frigorífica completa —diseño, paneles, puertas, piso, equipo y montaje— también la armamos.',
+    href: '/camaras-frigorificas',
+    label: 'Ver cámaras frigoríficas',
+  },
 }
 

@@ -2,9 +2,17 @@ interface FAQSchemaProps {
   items: Array<{
     question: string
     answer: string
+    link?: {
+      href: string
+      label: string
+    }
   }> | ReadonlyArray<{
     question: string
     answer: string
+    link?: {
+      href: string
+      label: string
+    }
   }>
 }
 
@@ -17,7 +25,9 @@ export default function FAQSchema({ items }: FAQSchemaProps) {
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: item.link
+          ? `${item.answer} ${item.link.label}: ${item.link.href}`
+          : item.answer,
       },
     })),
   }

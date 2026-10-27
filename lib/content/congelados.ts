@@ -125,4 +125,9 @@ export const congeladosContent = {
       ],
     },
   },
+  camaraProductoLink: {
+    text: 'Si necesitás la cámara de congelado completa —diseño, paneles, puertas, piso, equipo y montaje— también la armamos.',
+    href: '/camaras-frigorificas',
+    label: 'Ver cámaras frigoríficas',
+  },
 }

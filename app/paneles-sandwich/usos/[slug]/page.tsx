@@ -355,6 +355,18 @@ export default async function UsoPage({ params }: PageProps) {
           </>
         )}
 
+        <section className="border-t border-gray-200 bg-white py-10">
+          <div className="container-custom text-center">
+            <p className="mx-auto mb-3 max-w-2xl text-gray-600">{cfContent.camaraProductoLink.text}</p>
+            <Link
+              href={cfContent.camaraProductoLink.href}
+              className="font-semibold text-primary-600 hover:text-primary-700"
+            >
+              {cfContent.camaraProductoLink.label}
+            </Link>
+          </div>
+        </section>
+
         {/* CTA Final */}
         <CTA
           title={`¿Necesitas paneles sándwich para ${uso?.title.toLowerCase()}?`}
@@ -581,6 +593,18 @@ export default async function UsoPage({ params }: PageProps) {
             <FAQSchema items={content.faqs} />
           </>
         )}
+
+        <section className="border-t border-gray-200 bg-white py-10">
+          <div className="container-custom text-center">
+            <p className="mx-auto mb-3 max-w-2xl text-gray-600">{congContent.camaraProductoLink.text}</p>
+            <Link
+              href={congContent.camaraProductoLink.href}
+              className="font-semibold text-primary-600 hover:text-primary-700"
+            >
+              {congContent.camaraProductoLink.label}
+            </Link>
+          </div>
+        </section>
 
         {/* CTA Final */}
         <CTA

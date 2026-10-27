@@ -76,6 +76,11 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold text-white">Información</h3>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/camaras-frigorificas" className="transition-colors hover:text-primary-400">
+                  Cámaras frigoríficas
+                </Link>
+              </li>
+              <li>
                 <Link href="/paneles-sandwich/tipos" className="transition-colors hover:text-primary-400">
                   Tipos de Paneles
                 </Link>

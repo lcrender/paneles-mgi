@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import Hero from '@/components/ui/Hero'
@@ -74,7 +75,9 @@ export default function HomePage() {
         description={
           <>
             <p>Fábrica de paneles para construir tu cámara frigorífica. Cotización, precio y asesoramiento técnico.</p>
-            <p>También para techos, muros y naves industriales.</p>
+            <p className="border-l-4 border-primary-400 pl-4 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+              También para techos, muros y naves industriales.
+            </p>
             <p>Solicitá asesoramiento para tu proyecto: tenemos distintos tipos y espesores según la aplicación.</p>
             <p>📍 Envíos a toda Argentina.</p>
           </>
@@ -87,6 +90,39 @@ export default function HomePage() {
         primaryCta={{ text: 'Cotizar', href: '/contacto' }}
         secondaryCta={showWhatsApp ? { text: 'WhatsApp', href: whatsappLink } : undefined}
       />
+
+      {/* Cámaras frigoríficas completas */}
+      <section className="section-padding bg-primary-50">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-2xl bg-gray-900 lg:max-w-none">
+              <Image
+                src="/images/camaras-frigorificas-hero.webp"
+                alt="Cámara frigorífica MGI armada y lista para operar"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1023px) min(100vw, 448px), 50vw"
+              />
+            </div>
+            <div>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+                ¿Necesitás la cámara frigorífica completa?
+              </h2>
+              <p className="mb-4 text-lg text-gray-700">
+                Además de los paneles, fabricamos y montamos cámaras frigoríficas industriales y
+                modulares en Argentina: diseño, puertas, pisos, equipos de frío y servicio postventa.
+              </p>
+              <p className="mb-8 text-gray-600">
+                Ideal si buscás armado y montaje de cámaras de refrigeración o congelado, no solo
+                la panelería.
+              </p>
+              <Link href="/camaras-frigorificas" className="btn-primary inline-block">
+                Ver cámaras frigoríficas
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Beneficios Section */}
       <section className="section-padding bg-white">

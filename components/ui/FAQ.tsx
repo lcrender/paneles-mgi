@@ -1,10 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 interface FAQItem {
   question: string
   answer: string
+  link?: {
+    href: string
+    label: string
+  }
 }
 
 interface FAQProps {
@@ -56,6 +61,16 @@ export default function FAQ({ items, title = 'Preguntas Frecuentes', className =
                   role="region"
                 >
                   <p className="leading-relaxed">{item.answer}</p>
+                  {item.link && (
+                    <p className="mt-3">
+                      <Link
+                        href={item.link.href}
+                        className="font-semibold text-primary-600 hover:text-primary-700"
+                      >
+                        {item.link.label}
+                      </Link>
+                    </p>
+                  )}
                 </div>
               )}
             </div>
@@ -65,4 +80,3 @@ export default function FAQ({ items, title = 'Preguntas Frecuentes', className =
     </section>
   )
 }
-

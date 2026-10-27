@@ -69,7 +69,16 @@ export const usosContent = {
       {
         question: '¿Realizan instalación?',
         answer:
-          'Contamos con equipo técnico especializado en montaje de cámaras frigoríficas en todo el país.',
+          'Sí. Contamos con equipo técnico especializado en montaje de cámaras frigoríficas en todo el país. También armamos la cámara completa si la necesitás.',
+      },
+      {
+        question: '¿También arman la cámara frigorífica completa?',
+        answer:
+          'Sí. Además de los paneles, diseñamos y montamos la cámara frigorífica completa: puertas, pisos, equipos de frío y armado en obra.',
+        link: {
+          href: '/camaras-frigorificas',
+          label: 'Ver cámaras frigoríficas',
+        },
       },
       {
         question: '¿Cuál es la diferencia entre PIR y EPS?',
@@ -120,7 +129,11 @@ export const usosContent = {
       {
         question: '¿Realizan instalación de cámaras de congelado?',
         answer:
-          'Sí. Contamos con equipo técnico especializado en montaje de cámaras frigoríficas y de congelado en todo el país.',
+          'Sí. Montamos cámaras de congelado en todo el país y, si la necesitás, también armamos la cámara completa: puertas, pisos, equipos de frío y montaje en obra.',
+        link: {
+          href: '/camaras-frigorificas',
+          label: 'Ver cámaras frigoríficas',
+        },
       },
     ],
   },

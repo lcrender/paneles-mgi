@@ -93,6 +93,13 @@ export default function Header() {
             </div>
 
             <Link
+              href="/camaras-frigorificas"
+              className="text-base font-medium text-gray-700 transition-colors hover:text-primary-600"
+            >
+              Cámaras frigoríficas
+            </Link>
+
+            <Link
               href="/paneles-sandwich/tipos"
               className="text-base font-medium text-gray-700 transition-colors hover:text-primary-600"
             >
@@ -169,6 +176,14 @@ export default function Header() {
                   ))}
                 </div>
               </div>
+
+              <Link
+                href="/camaras-frigorificas"
+                className="block px-4 py-2 text-base font-medium text-gray-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Cámaras frigoríficas
+              </Link>
 
               <Link
                 href="/paneles-sandwich/tipos"
